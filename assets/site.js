@@ -34,6 +34,7 @@ const I18N = {
     platforms_kicker:"Nos plateformes",
     platforms_title:"Neuf plateformes nationales, un même engagement",
     platforms_sub:"Les organisations membres qui composent l'unité de coordination du RENOSPAC.",
+    visit_site:"Visiter le site",
     objectives_kicker:"Nos objectifs",
     objectives_title:"Ce que nous faisons, concrètement",
     gallery_kicker:"Galerie", gallery_title:"Le réseau en action",
@@ -138,6 +139,7 @@ const I18N = {
     platforms_kicker:"Our platforms",
     platforms_title:"Nine national platforms, one shared commitment",
     platforms_sub:"The member organisations that make up RENOSPAC's coordination unit.",
+    visit_site:"Visit website",
     objectives_kicker:"Our objectives",
     objectives_title:"What we do, concretely",
     gallery_kicker:"Gallery", gallery_title:"The network in action",
@@ -217,6 +219,18 @@ const I18N = {
 };
 
 const SIGLES = ['FNCPG','ONAMEL','ACS','SDT','AHP','IMG','ACMEG','RECOSAC-G','OCPH'];
+/* Verified partner websites (null = no known website yet) */
+const PLATFORM_URLS = {
+  FNCPG: null,
+  ONAMEL: null,
+  ACS: null,
+  SDT: null,
+  AHP: null,
+  IMG: 'https://imguinee.wordpress.com/',
+  ACMEG: 'https://actionmedicaleguinee.org/',
+  'RECOSAC-G': 'https://recosacguinee.org/',
+  OCPH: 'https://www.caritas.org/where-caritas-work/africa/guinea/',
+};
 const CARD_STYLES = [
   { text:'text-ciel-500',  chip:'bg-ciel-500/10 text-ciel-500' },
   { text:'text-vitale-500',chip:'bg-vitale-500/10 text-vitale-500' },
@@ -263,16 +277,22 @@ function renderGrids() {
   if (pg) {
     pg.innerHTML = SIGLES.map((s, i) => {
       const st = CARD_STYLES[i % 3];
-      return `
-      <div class="platform-card reveal is-visible bg-white border border-petrol-900/10 rounded-2xl p-7">
+      const url = PLATFORM_URLS[s];
+      const inner = `
         <div class="flex items-center justify-between">
           <span class="font-display font-black text-xl ${st.text}">${s}</span>
           <span class="w-9 h-9 rounded-full ${st.chip} flex items-center justify-center">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+            ${url
+              ? `<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>`
+              : `<svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>`}
           </span>
         </div>
         <p class="mt-3 text-[15px] text-petrol-700 leading-snug">${t.platform_names[s]}</p>
-      </div>`;
+        ${url ? `<p class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold ${st.text}">${t.visit_site}
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg></p>` : ''}`;
+      return url
+        ? `<a href="${url}" target="_blank" rel="noopener" class="platform-card reveal is-visible block bg-white border border-petrol-900/10 rounded-2xl p-7 cursor-pointer" aria-label="${s} — ${t.visit_site}">${inner}</a>`
+        : `<div class="platform-card reveal is-visible bg-white border border-petrol-900/10 rounded-2xl p-7">${inner}</div>`;
     }).join('');
   }
   const og = document.getElementById('objectives-grid');
