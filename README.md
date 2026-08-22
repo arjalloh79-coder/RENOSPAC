@@ -36,6 +36,16 @@ Tant qu'un fichier manque, le site affiche automatiquement une vignette élégan
 
 Vous pouvez aussi remplacer `assets/logo.png` par la version carrée haute qualité du logo.
 
+## Logos des partenaires
+
+Déposez le logo de chaque plateforme dans `assets/partners/` avec ces noms exacts
+(PNG, fond transparent ou blanc, idéalement carré ≥ 200×200 px) :
+
+`fncpg.png` · `onamel.png` · `acs.png` · `sdt.png` · `ahp.png` · `img.png` · `acmeg.png` · `recosac-g.png` · `ocph.png`
+
+Dès qu'un fichier est présent, il remplace automatiquement le monogramme coloré sur la carte
+de la plateforme (pages Accueil et Qui sommes-nous).
+
 ## Coordonnées à compléter
 
 Dans `index.html`, recherchez `6XX XX XX XX` et `contact@renospac-guinee.org` et remplacez par les
