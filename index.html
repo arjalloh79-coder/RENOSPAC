@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RENOSPAC Guinée — Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles</title>
+<meta name="description" content="Le RENOSPAC regroupe et représente près de 1 400 structures sanitaires privées en Guinée à travers 9 plateformes nationales, en partenariat avec le Ministère de la Santé via la DNEHPP.">
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/tailwind.css">
+<style>
+  /* Hero atmosphere: layered gradients + subtle medical-cross pattern */
+  .hero-bg {
+    background:
+      radial-gradient(1100px 520px at 85% -10%, rgba(55,164,216,.28), transparent 60%),
+      radial-gradient(700px 420px at -5% 110%, rgba(168,211,36,.14), transparent 55%),
+      linear-gradient(160deg, #07222f 0%, #0b3040 55%, #0f3d52 100%);
+  }
+  .cross-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56'%3E%3Cpath d='M26 18h4v8h8v4h-8v8h-4v-8h-8v-4h8z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+  }
+  .grain::after {
+    content:''; position:absolute; inset:0; pointer-events:none; opacity:.5; mix-blend-mode:overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+  }
+
+  /* Scroll reveal */
+  .reveal { opacity:0; transform: translateY(26px); transition: opacity .7s cubic-bezier(.2,.6,.2,1), transform .7s cubic-bezier(.2,.6,.2,1); }
+  .reveal.is-visible { opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce) { .reveal { opacity:1; transform:none; transition:none; } }
+
+  #mainnav { transition: box-shadow .3s, background-color .3s; }
+  #mainnav.scrolled { box-shadow: 0 8px 30px -12px rgba(7,34,47,.35); }
+
+  .platform-card { transition: transform .35s cubic-bezier(.2,.6,.2,1), box-shadow .35s, border-color .35s; }
+  .platform-card:hover { transform: translateY(-6px); box-shadow: 0 22px 40px -18px rgba(15,61,82,.35); border-color:#37a4d8; }
+
+  .gallery-item { transition: transform .4s cubic-bezier(.2,.6,.2,1); }
+  .gallery-item:hover { transform: scale(1.015); }
+  .gallery-item .caption { transform: translateY(100%); transition: transform .35s; }
+  .gallery-item:hover .caption { transform: translateY(0); }
+
+  /* Placeholder tile shown while a photo file has not been added yet */
+  .ph-tile {
+    background:
+      linear-gradient(150deg, rgba(55,164,216,.16), rgba(11,48,64,.06)),
+      repeating-linear-gradient(45deg, rgba(15,61,82,.05) 0 12px, transparent 12px 24px), #eef6fb;
+  }
+
+  .lang-btn.active { color:#a8d324; font-weight:700; }
+
+  html { scroll-padding-top: 96px; }
+</style>
+</head>
+
+<body class="bg-creme text-petrol-900 antialiased font-body">
+
+<!-- ══════════════ TOP MINI-BAR ══════════════ -->
+<div class="bg-petrol-950 text-ciel-100 text-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-10 gap-4">
+    <div class="flex items-center gap-5 min-w-0">
+      <a href="tel:+224600000000" class="flex items-center gap-2 hover:text-lime-500 transition-colors whitespace-nowrap">
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        <span class="hidden sm:inline">+224 6XX XX XX XX</span>
+      </a>
+      <a href="mailto:contact@renospac-guinee.org" class="hidden md:flex items-center gap-2 hover:text-lime-500 transition-colors">
+        <svg class="w-4 h-4 shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        contact@renospac-guinee.org
+      </a>
+    </div>
+    <div class="flex items-center gap-4">
+      <span class="hidden lg:inline text-ciel-100/60" data-i18n="topbar_loc">Conakry, République de Guinée</span>
+      <span class="hidden lg:inline h-4 w-px bg-white/20"></span>
+      <a href="#" aria-label="Facebook" class="hover:text-lime-500 transition-colors">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.9 3.77-3.9 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg>
+      </a>
+      <a href="#" aria-label="WhatsApp" class="hover:text-lime-500 transition-colors">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.39a9.87 9.87 0 004.69 1.19h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.03-5.13-2.9-7A9.82 9.82 0 0012.04 2zm5.83 14.12c-.25.7-1.45 1.34-2 1.4-.51.05-1.16.08-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.05-2.49.27-.3.6-.37.8-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.33.03.53-.1.2-.15.32-.3.5-.15.17-.32.39-.45.52-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.15 1.37 2.46 1.52.3.15.48.13.66-.08.18-.2.76-.89.96-1.19.2-.3.4-.25.68-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.08.13.08.72-.17 1.42z"/></svg>
+      </a>
+      <span class="h-4 w-px bg-white/20"></span>
+      <div class="flex items-center gap-1.5 text-xs tracking-widest uppercase">
+        <button class="lang-btn active hover:text-lime-500" data-lang="fr" aria-label="Français">FR</button>
+        <span class="text-white/30">·</span>
+        <button class="lang-btn hover:text-lime-500" data-lang="en" aria-label="English">EN</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════ MAIN NAV ══════════════ -->
+<header id="mainnav" class="sticky top-0 z-50 bg-creme/95 backdrop-blur border-b border-petrol-900/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-20">
+    <a href="#accueil" class="flex items-center gap-3 min-w-0">
+      <img src="assets/logo.png" alt="Logo RENOSPAC" class="h-12 w-12 object-contain shrink-0">
+      <span class="leading-tight">
+        <span class="font-display font-bold text-xl tracking-tight text-petrol-900 block">RENOSPAC</span>
+        <span class="text-[11px] text-petrol-700/80 hidden sm:block" data-i18n="brand_sub">Réseau National des Organisations Sanitaires Privées</span>
+      </span>
+    </a>
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium">
+      <a href="#accueil" class="hover:text-ciel-500 transition-colors" data-i18n="nav_home">Accueil</a>
+      <a href="#apropos" class="hover:text-ciel-500 transition-colors" data-i18n="nav_about">Qui sommes-nous</a>
+      <a href="#plateformes" class="hover:text-ciel-500 transition-colors" data-i18n="nav_platforms">Plateformes</a>
+      <a href="#objectifs" class="hover:text-ciel-500 transition-colors" data-i18n="nav_objectives">Objectifs</a>
+      <a href="#galerie" class="hover:text-ciel-500 transition-colors" data-i18n="nav_gallery">Galerie</a>
+      <a href="#contact" class="hover:text-ciel-500 transition-colors" data-i18n="nav_contact">Contact</a>
+    </nav>
+    <div class="flex items-center gap-3">
+      <a href="#contact" class="hidden sm:inline-flex items-center gap-2 bg-vitale-500 hover:bg-vitale-600 text-white font-semibold px-5 py-2.5 rounded-full transition-all hover:shadow-lg hover:shadow-vitale-500/30 text-sm">
+        <span data-i18n="nav_cta">Nous rejoindre</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg>
+      </a>
+      <button id="menu-btn" aria-label="Menu" class="lg:hidden p-2 rounded-lg hover:bg-petrol-900/5">
+        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/></svg>
+      </button>
+    </div>
+  </div>
+  <!-- Mobile drawer -->
+  <div id="mobile-menu" class="lg:hidden hidden border-t border-petrol-900/10 bg-creme">
+    <nav class="px-6 py-4 flex flex-col gap-1 text-base font-medium">
+      <a href="#accueil" class="mobile-link py-2.5 border-b border-petrol-900/5" data-i18n="nav_home">Accueil</a>
+      <a href="#apropos" class="mobile-link py-2.5 border-b border-petrol-900/5" data-i18n="nav_about">Qui sommes-nous</a>
+      <a href="#plateformes" class="mobile-link py-2.5 border-b border-petrol-900/5" data-i18n="nav_platforms">Plateformes</a>
+      <a href="#objectifs" class="mobile-link py-2.5 border-b border-petrol-900/5" data-i18n="nav_objectives">Objectifs</a>
+      <a href="#galerie" class="mobile-link py-2.5 border-b border-petrol-900/5" data-i18n="nav_gallery">Galerie</a>
+      <a href="#contact" class="mobile-link py-2.5" data-i18n="nav_contact">Contact</a>
+      <a href="#contact" class="mobile-link mt-3 bg-vitale-500 text-white text-center font-semibold py-3 rounded-full" data-i18n="nav_cta">Nous rejoindre</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section id="accueil" class="hero-bg grain relative overflow-hidden text-white">
+  <div class="cross-pattern absolute inset-0"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 relative py-24 lg:py-32 grid lg:grid-cols-12 gap-12 items-center">
+    <div class="lg:col-span-7 reveal">
+      <p class="inline-flex items-center gap-2 text-lime-500 font-semibold tracking-[0.2em] uppercase text-xs mb-6">
+        <span class="h-px w-8 bg-lime-500"></span> <span data-i18n="hero_kicker">République de Guinée · Santé privée</span>
+      </p>
+      <h1 class="font-display font-black text-4xl sm:text-5xl lg:text-[3.6rem] leading-[1.08] tracking-tight" data-i18n-html="hero_title">
+        Unir le secteur sanitaire privé au service de <span class="text-ciel-400 italic">toute la Guinée</span>.
+      </h1>
+      <p class="mt-6 text-lg text-ciel-100/85 max-w-2xl leading-relaxed" data-i18n-html="hero_lead">
+        Le Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée
+        regroupe près de <strong class="text-white">1 400 structures sanitaires</strong> à travers
+        <strong class="text-white">9 plateformes nationales</strong>, aux côtés du Ministère de la Santé et de l'Hygiène Publique.
+      </p>
+      <div class="mt-9 flex flex-wrap gap-4">
+        <a href="#apropos" class="inline-flex items-center gap-2 bg-ciel-500 hover:bg-ciel-400 text-petrol-950 font-bold px-7 py-3.5 rounded-full transition-all hover:shadow-xl hover:shadow-ciel-500/25">
+          <span data-i18n="hero_cta1">Découvrir le réseau</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21l-7.5-7.5M12 21V3"/></svg>
+        </a>
+        <a href="#contact" class="inline-flex items-center gap-2 border-2 border-white/30 hover:border-lime-500 hover:text-lime-500 font-bold px-7 py-3.5 rounded-full transition-colors" data-i18n="hero_cta2">
+          Devenir membre
+        </a>
+      </div>
+    </div>
+    <div class="lg:col-span-5 reveal" style="transition-delay:.15s">
+      <div class="relative mx-auto max-w-sm">
+        <div class="absolute -inset-6 bg-ciel-500/20 rounded-[2.5rem] rotate-3"></div>
+        <div class="relative bg-white/10 backdrop-blur border border-white/15 rounded-[2rem] p-8 text-center">
+          <img src="assets/logo.png" alt="Emblème du RENOSPAC" class="mx-auto h-40 w-40 object-contain drop-shadow-2xl rounded-full">
+          <p class="mt-5 font-display text-2xl font-bold">RENOSPAC</p>
+          <p class="text-sm text-ciel-100/80 mt-1" data-i18n="hero_card_sub">Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles</p>
+          <div class="mt-6 grid grid-cols-2 gap-3 text-left">
+            <div class="bg-petrol-950/40 rounded-xl px-4 py-3">
+              <p class="text-2xl font-display font-black text-lime-500"><span class="counter" data-target="1400">0</span></p>
+              <p class="text-xs text-ciel-100/70" data-i18n="stat_members_s">structures membres</p>
+            </div>
+            <div class="bg-petrol-950/40 rounded-xl px-4 py-3">
+              <p class="text-2xl font-display font-black text-lime-500"><span class="counter" data-target="9">0</span></p>
+              <p class="text-xs text-ciel-100/70" data-i18n="stat_platforms_s">plateformes nationales</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="relative h-14">
+    <svg class="absolute bottom-0 w-full text-creme" viewBox="0 0 1440 54" preserveAspectRatio="none" fill="currentColor"><path d="M0 54h1440V20C1200 50 960 8 720 22 480 36 240 4 0 30v24z"/></svg>
+  </div>
+</section>
+
+<!-- ══════════════ IMPACT / COUNTERS ══════════════ -->
+<section class="max-w-7xl mx-auto px-4 sm:px-6 -mt-2 pb-8">
+  <div class="grid sm:grid-cols-3 gap-6 reveal">
+    <div class="bg-white rounded-2xl border border-petrol-900/10 shadow-sm px-8 py-7 text-center">
+      <p class="font-display font-black text-4xl text-petrol-900">≈ <span class="counter" data-target="1400">0</span></p>
+      <p class="mt-1.5 text-sm font-medium text-petrol-700/80" data-i18n="stat1">structures sanitaires privées représentées</p>
+    </div>
+    <div class="bg-white rounded-2xl border border-petrol-900/10 shadow-sm px-8 py-7 text-center">
+      <p class="font-display font-black text-4xl text-ciel-500"><span class="counter" data-target="9">0</span></p>
+      <p class="mt-1.5 text-sm font-medium text-petrol-700/80" data-i18n="stat2">plateformes nationales fédérées</p>
+    </div>
+    <div class="bg-white rounded-2xl border border-petrol-900/10 shadow-sm px-8 py-7 text-center">
+      <p class="font-display font-black text-4xl text-vitale-500">100<span class="text-2xl">%</span></p>
+      <p class="mt-1.5 text-sm font-medium text-petrol-700/80" data-i18n="stat3">du territoire national couvert par nos plateformes</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ QUI SOMMES-NOUS (split) ══════════════ -->
+<section id="apropos" class="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-28">
+  <div class="grid lg:grid-cols-2 gap-14 items-center">
+    <div class="reveal order-2 lg:order-1">
+      <div class="relative">
+        <div class="absolute -left-5 -top-5 w-32 h-32 rounded-3xl bg-lime-500/20"></div>
+        <div class="absolute -right-5 -bottom-5 w-40 h-40 rounded-3xl bg-ciel-500/15"></div>
+        <figure class="relative rounded-3xl overflow-hidden shadow-2xl shadow-petrol-900/20 aspect-[4/3]">
+          <img src="assets/photo-5.jpg" data-caption-key="cap5" alt="Photo de groupe du RENOSPAC" class="site-photo w-full h-full object-cover">
+        </figure>
+      </div>
+    </div>
+    <div class="reveal order-1 lg:order-2">
+      <p class="text-vitale-500 font-semibold tracking-[0.2em] uppercase text-xs mb-4 flex items-center gap-2"><span class="h-px w-8 bg-vitale-500"></span> <span data-i18n="about_kicker">Qui sommes-nous ?</span></p>
+      <h2 class="font-display font-black text-3xl sm:text-4xl leading-tight tracking-tight" data-i18n-html="about_title">Un réseau, neuf plateformes,<br>une seule coordination.</h2>
+      <p class="mt-6 text-petrol-700 leading-relaxed" data-i18n-html="about_p1">
+        Le <strong>Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée (RENOSPAC)</strong>
+        est une organisation regroupant et représentant près de <strong>mille quatre cents (1 400) structures sanitaires privées</strong>
+        en Guinée à travers neuf plateformes nationales.
+      </p>
+      <p class="mt-4 text-petrol-700 leading-relaxed" data-i18n="about_p2">
+        Le secteur privé de la santé représente une part significative de l'offre de soins en complément du secteur public.
+        Il contribue à l'accessibilité des services de santé, notamment dans les zones urbaines où la demande est forte.
+        Les cliniques privées, associatives et confessionnelles jouent un rôle essentiel dans la diversification des services
+        — consultations spécialisées, maternités, laboratoires, imagerie médicale — et participent à la réduction de la charge
+        des formations sanitaires (FOSA) publiques et à l'amélioration de la couverture sanitaire nationale.
+      </p>
+      <p class="mt-4 text-petrol-700 leading-relaxed" data-i18n-html="about_p3">
+        Créé à l'initiative des responsables des associations de cliniques privées lucratives et non lucratives, le réseau
+        constitue l'unité de coordination de toutes ces organisations sanitaires, avec l'orientation des autorités sanitaires
+        à travers la <strong>Direction Nationale des Établissements Hospitaliers Publics et Privés (DNEHPP)</strong>.
+      </p>
+      <a href="#plateformes" class="mt-8 inline-flex items-center gap-2 text-ciel-500 font-bold hover:gap-3.5 transition-all">
+        <span data-i18n="about_link">Voir nos neuf plateformes</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.4" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ MISSION BAND ══════════════ -->
+<section class="bg-petrol-950 text-white relative overflow-hidden grain">
+  <div class="cross-pattern absolute inset-0"></div>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center relative reveal">
+    <p class="text-lime-500 font-semibold tracking-[0.25em] uppercase text-xs mb-5" data-i18n="mission_kicker">Notre mission</p>
+    <blockquote class="font-display text-2xl sm:text-3xl lg:text-[2.1rem] leading-snug font-semibold" data-i18n="mission_quote">
+      « Défendre les intérêts des cliniques privées, promouvoir leur conformité réglementaire et renforcer leur crédibilité institutionnelle. »
+    </blockquote>
+    <div class="mt-10 grid sm:grid-cols-2 gap-6 text-left">
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-7">
+        <p class="font-display font-bold text-lg text-ciel-400 mb-2" data-i18n="goal_title">Notre but</p>
+        <p class="text-ciel-100/85 text-[15px] leading-relaxed" data-i18n="goal_text">Accompagner le Ministère de la Santé, à travers la DNEHPP, dans la mise en œuvre et l'exécution de la stratégie nationale de développement sanitaire privé en Guinée.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-2xl p-7">
+        <p class="font-display font-bold text-lg text-ciel-400 mb-2" data-i18n="where_title">Où sommes-nous ?</p>
+        <p class="text-ciel-100/85 text-[15px] leading-relaxed" data-i18n="where_text">À travers ses plateformes, le RENOSPAC représente les FOSA privées de santé sur toute l'étendue du territoire national.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PLATEFORMES GRID ══════════════ -->
+<section id="plateformes" class="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-28">
+  <div class="max-w-2xl mx-auto text-center reveal">
+    <p class="text-vitale-500 font-semibold tracking-[0.2em] uppercase text-xs mb-4" data-i18n="platforms_kicker">Nos plateformes</p>
+    <h2 class="font-display font-black text-3xl sm:text-4xl tracking-tight" data-i18n="platforms_title">Neuf plateformes nationales, un même engagement</h2>
+    <p class="mt-4 text-petrol-700" data-i18n="platforms_sub">Les organisations membres qui composent l'unité de coordination du RENOSPAC.</p>
+  </div>
+  <div id="platforms-grid" class="mt-14 grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+</section>
+
+<!-- ══════════════ OBJECTIFS ══════════════ -->
+<section id="objectifs" class="bg-ciel-50 border-y border-ciel-500/15">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-28">
+    <div class="max-w-2xl reveal">
+      <p class="text-vitale-500 font-semibold tracking-[0.2em] uppercase text-xs mb-4 flex items-center gap-2"><span class="h-px w-8 bg-vitale-500"></span> <span data-i18n="objectives_kicker">Nos objectifs</span></p>
+      <h2 class="font-display font-black text-3xl sm:text-4xl tracking-tight" data-i18n="objectives_title">Ce que nous faisons, concrètement</h2>
+    </div>
+    <div id="objectives-grid" class="mt-12 grid md:grid-cols-2 gap-5"></div>
+  </div>
+</section>
+
+<!-- ══════════════ GALERIE ══════════════ -->
+<section id="galerie" class="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-28">
+  <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+    <div>
+      <p class="text-vitale-500 font-semibold tracking-[0.2em] uppercase text-xs mb-4 flex items-center gap-2"><span class="h-px w-8 bg-vitale-500"></span> <span data-i18n="gallery_kicker">Galerie</span></p>
+      <h2 class="font-display font-black text-3xl sm:text-4xl tracking-tight" data-i18n="gallery_title">Le réseau en action</h2>
+    </div>
+    <p class="text-petrol-700/80 max-w-md text-sm" data-i18n="gallery_sub">Ateliers, panels et rencontres du RENOSPAC aux côtés du Ministère de la Santé et de l'Hygiène Publique.</p>
+  </div>
+  <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+    <figure class="gallery-item reveal relative rounded-2xl overflow-hidden cursor-zoom-in aspect-[4/3] lg:col-span-2 lg:aspect-auto">
+      <img src="assets/photo-2.jpg" data-caption-key="cap2" alt="Atelier du RENOSPAC en salle plénière" class="site-photo w-full h-full object-cover">
+      <figcaption class="caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-petrol-950/90 to-transparent text-white text-sm px-5 pt-10 pb-4" data-i18n="cap2"></figcaption>
+    </figure>
+    <figure class="gallery-item reveal relative rounded-2xl overflow-hidden cursor-zoom-in aspect-[4/3]">
+      <img src="assets/photo-1.jpg" data-caption-key="cap1" alt="Intervention au micro lors d'une rencontre" class="site-photo w-full h-full object-cover">
+      <figcaption class="caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-petrol-950/90 to-transparent text-white text-sm px-5 pt-10 pb-4" data-i18n="cap1"></figcaption>
+    </figure>
+    <figure class="gallery-item reveal relative rounded-2xl overflow-hidden cursor-zoom-in aspect-[4/3]">
+      <img src="assets/photo-3.jpg" data-caption-key="cap3" alt="Membres en gilets RENOSPAC" class="site-photo w-full h-full object-cover">
+      <figcaption class="caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-petrol-950/90 to-transparent text-white text-sm px-5 pt-10 pb-4" data-i18n="cap3"></figcaption>
+    </figure>
+    <figure class="gallery-item reveal relative rounded-2xl overflow-hidden cursor-zoom-in aspect-[4/3]">
+      <img src="assets/photo-4.jpg" data-caption-key="cap4" alt="Équipe du RENOSPAC mains levées" class="site-photo w-full h-full object-cover">
+      <figcaption class="caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-petrol-950/90 to-transparent text-white text-sm px-5 pt-10 pb-4" data-i18n="cap4"></figcaption>
+    </figure>
+    <figure class="gallery-item reveal relative rounded-2xl overflow-hidden cursor-zoom-in aspect-[4/3]">
+      <img src="assets/photo-6.jpg" data-caption-key="cap6" alt="Photo de groupe du RENOSPAC devant un établissement" class="site-photo w-full h-full object-cover">
+      <figcaption class="caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-petrol-950/90 to-transparent text-white text-sm px-5 pt-10 pb-4" data-i18n="cap6"></figcaption>
+    </figure>
+    <figure class="gallery-item reveal relative rounded-2xl overflow-hidden cursor-zoom-in aspect-[4/3]">
+      <img src="assets/photo-7.jpg" data-caption-key="cap7" alt="Conférence de presse du RENOSPAC" class="site-photo w-full h-full object-cover">
+      <figcaption class="caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-petrol-950/90 to-transparent text-white text-sm px-5 pt-10 pb-4" data-i18n="cap7"></figcaption>
+    </figure>
+    <figure class="gallery-item reveal relative rounded-2xl overflow-hidden cursor-zoom-in aspect-[4/3]">
+      <img src="assets/photo-8.jpg" data-caption-key="cap8" alt="Membres du RENOSPAC en visite de terrain" class="site-photo w-full h-full object-cover">
+      <figcaption class="caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-petrol-950/90 to-transparent text-white text-sm px-5 pt-10 pb-4" data-i18n="cap8"></figcaption>
+    </figure>
+    <figure class="gallery-item reveal relative rounded-2xl overflow-hidden cursor-zoom-in aspect-[4/3]">
+      <img src="assets/photo-5.jpg" data-caption-key="cap5" alt="Photo de groupe devant la banderole RENOSPAC" class="site-photo w-full h-full object-cover">
+      <figcaption class="caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-petrol-950/90 to-transparent text-white text-sm px-5 pt-10 pb-4" data-i18n="cap5"></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 z-[100] hidden items-center justify-center bg-petrol-950/95 p-4 sm:p-10 cursor-zoom-out">
+  <button id="lightbox-close" aria-label="Fermer" class="absolute top-5 right-5 text-white/70 hover:text-white p-2">
+    <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+  </button>
+  <figure class="max-w-5xl w-full text-center" onclick="event.stopPropagation()">
+    <img id="lightbox-img" src="" alt="" class="max-h-[78vh] w-auto mx-auto rounded-xl shadow-2xl">
+    <figcaption id="lightbox-caption" class="mt-4 text-ciel-100/85 text-sm"></figcaption>
+  </figure>
+</div>
+
+<!-- ══════════════ CONTACT ══════════════ -->
+<section id="contact" class="bg-petrol-950 text-white relative overflow-hidden grain">
+  <div class="cross-pattern absolute inset-0"></div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-20 lg:py-28 relative grid lg:grid-cols-2 gap-14">
+    <div class="reveal">
+      <p class="text-lime-500 font-semibold tracking-[0.2em] uppercase text-xs mb-4 flex items-center gap-2"><span class="h-px w-8 bg-lime-500"></span> <span data-i18n="contact_kicker">Contact</span></p>
+      <h2 class="font-display font-black text-3xl sm:text-4xl tracking-tight" data-i18n="contact_title">Rejoignez le réseau ou écrivez-nous</h2>
+      <p class="mt-4 text-ciel-100/80 leading-relaxed max-w-lg" data-i18n="contact_sub">
+        Promoteur d'une FOSA privée, associative ou confessionnelle ? Le RENOSPAC vous oriente et vous accompagne, notamment dans le processus de recherche d'agréments.
+      </p>
+      <ul class="mt-10 space-y-6 text-[15px]">
+        <li class="flex gap-4">
+          <span class="shrink-0 w-11 h-11 rounded-xl bg-ciel-500/15 text-ciel-400 flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+          </span>
+          <div><p class="font-semibold" data-i18n="c_hq">Siège</p><p class="text-ciel-100/70" data-i18n="c_hq_v">Conakry, République de Guinée</p></div>
+        </li>
+        <li class="flex gap-4">
+          <span class="shrink-0 w-11 h-11 rounded-xl bg-ciel-500/15 text-ciel-400 flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+          </span>
+          <div><p class="font-semibold" data-i18n="c_tel">Téléphone / WhatsApp</p><p class="text-ciel-100/70">+224 6XX XX XX XX <span class="text-ciel-100/40" data-i18n="c_todo">(à compléter)</span></p></div>
+        </li>
+        <li class="flex gap-4">
+          <span class="shrink-0 w-11 h-11 rounded-xl bg-ciel-500/15 text-ciel-400 flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+          </span>
+          <div><p class="font-semibold">Email</p><p class="text-ciel-100/70">contact@renospac-guinee.org <span class="text-ciel-100/40" data-i18n="c_todo2">(à compléter)</span></p></div>
+        </li>
+        <li class="flex gap-4">
+          <span class="shrink-0 w-11 h-11 rounded-xl bg-ciel-500/15 text-ciel-400 flex items-center justify-center">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </span>
+          <div><p class="font-semibold" data-i18n="c_hours">Horaires</p><p class="text-ciel-100/70" data-i18n="c_hours_v">Lundi – Vendredi · 8h30 – 17h00</p></div>
+        </li>
+      </ul>
+    </div>
+    <div class="reveal" style="transition-delay:.1s">
+      <form id="contact-form" class="bg-white text-petrol-900 rounded-3xl p-8 sm:p-10 shadow-2xl shadow-black/30">
+        <h3 class="font-display font-bold text-2xl" data-i18n="f_title">Envoyez-nous un message</h3>
+        <p class="text-sm text-petrol-700/70 mt-1.5" data-i18n="f_sub">Nous vous répondrons dans les meilleurs délais.</p>
+        <div class="mt-7 grid sm:grid-cols-2 gap-4">
+          <label class="block">
+            <span class="text-sm font-semibold" data-i18n="f_name">Nom complet</span>
+            <input type="text" required data-i18n-ph="f_name_ph" placeholder="Votre nom" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500">
+          </label>
+          <label class="block">
+            <span class="text-sm font-semibold" data-i18n="f_tel">Téléphone</span>
+            <input type="tel" placeholder="+224 ..." class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500">
+          </label>
+        </div>
+        <label class="block mt-4">
+          <span class="text-sm font-semibold">Email</span>
+          <input type="email" required placeholder="vous@exemple.com" data-i18n-ph="f_email_ph" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500">
+        </label>
+        <label class="block mt-4">
+          <span class="text-sm font-semibold" data-i18n="f_subject">Objet</span>
+          <select id="f-select" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500"></select>
+        </label>
+        <label class="block mt-4">
+          <span class="text-sm font-semibold">Message</span>
+          <textarea rows="4" required data-i18n-ph="f_msg_ph" placeholder="Votre message…" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500"></textarea>
+        </label>
+        <button type="submit" class="mt-6 w-full bg-vitale-500 hover:bg-vitale-600 text-white font-bold py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-vitale-500/25" data-i18n="f_send">Envoyer le message</button>
+        <p id="form-note" class="hidden mt-4 text-sm text-center font-medium text-lime-600" data-i18n="f_note">Merci ! Votre message a bien été préparé. (Formulaire de démonstration — à relier à un service d'envoi.)</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer class="bg-petrol-950 text-ciel-100/70 border-t border-white/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 text-sm">
+    <div class="lg:col-span-2 max-w-md">
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.png" alt="Logo RENOSPAC" class="h-11 w-11 object-contain rounded-full">
+        <span class="font-display font-bold text-white text-lg">RENOSPAC</span>
+      </div>
+      <p class="mt-4 leading-relaxed" data-i18n="footer_bio">
+        Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée.
+        Près de 1 400 structures sanitaires réunies au service de la santé de la population guinéenne,
+        en partenariat avec le Ministère de la Santé et de l'Hygiène Publique via la DNEHPP.
+      </p>
+      <div class="mt-5 flex items-center gap-4">
+        <a href="#" aria-label="Facebook" class="hover:text-lime-500 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5.02 3.66 9.18 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.9 3.77-3.9 1.09 0 2.23.19 2.23.19v2.47h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.9h-2.33V22c4.78-.76 8.44-4.92 8.44-9.94z"/></svg></a>
+        <a href="#" aria-label="WhatsApp" class="hover:text-lime-500 transition-colors"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.9 4.44-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2.05 22l5.3-1.39a9.87 9.87 0 004.69 1.19h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.03-5.13-2.9-7A9.82 9.82 0 0012.04 2zm5.83 14.12c-.25.7-1.45 1.34-2 1.4-.51.05-1.16.08-1.87-.12-.43-.14-.99-.32-1.7-.63-2.99-1.29-4.94-4.3-5.09-4.5-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.05-2.49.27-.3.6-.37.8-.37.2 0 .4 0 .57.01.18.01.43-.07.67.51.25.6.85 2.07.92 2.22.08.15.13.33.03.53-.1.2-.15.32-.3.5-.15.17-.32.39-.45.52-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.15 1.37 2.46 1.52.3.15.48.13.66-.08.18-.2.76-.89.96-1.19.2-.3.4-.25.68-.15.27.1 1.74.82 2.04.97.3.15.5.22.57.35.08.13.08.72-.17 1.42z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <p class="font-semibold text-white mb-4" data-i18n="footer_map">Plan du site</p>
+      <ul class="space-y-2.5">
+        <li><a href="#accueil" class="hover:text-lime-500 transition-colors" data-i18n="nav_home">Accueil</a></li>
+        <li><a href="#apropos" class="hover:text-lime-500 transition-colors" data-i18n="nav_about">Qui sommes-nous</a></li>
+        <li><a href="#plateformes" class="hover:text-lime-500 transition-colors" data-i18n="nav_platforms">Plateformes</a></li>
+        <li><a href="#objectifs" class="hover:text-lime-500 transition-colors" data-i18n="nav_objectives">Objectifs</a></li>
+        <li><a href="#galerie" class="hover:text-lime-500 transition-colors" data-i18n="nav_gallery">Galerie</a></li>
+        <li><a href="#contact" class="hover:text-lime-500 transition-colors" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-semibold text-white mb-4" data-i18n="footer_partners">Partenaires institutionnels</p>
+      <ul class="space-y-2.5">
+        <li data-i18n="footer_p1">Ministère de la Santé et de l'Hygiène Publique</li>
+        <li>DNEHPP</li>
+        <li data-i18n="footer_p3">Partenaires techniques et financiers</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-ciel-100/50">
+      <p>© <span id="year"></span> <span data-i18n="footer_copy">RENOSPAC — Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée. Tous droits réservés.</span></p>
+      <p data-i18n="footer_motto">République de Guinée · Travail — Justice — Solidarité</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ════════════════ I18N — French (default) & English ════════════════ */
+const I18N = {
+  fr: {
+    topbar_loc:"Conakry, République de Guinée",
+    brand_sub:"Réseau National des Organisations Sanitaires Privées",
+    nav_home:"Accueil", nav_about:"Qui sommes-nous", nav_platforms:"Plateformes",
+    nav_objectives:"Objectifs", nav_gallery:"Galerie", nav_contact:"Contact", nav_cta:"Nous rejoindre",
+    hero_kicker:"République de Guinée · Santé privée",
+    hero_title:`Unir le secteur sanitaire privé au service de <span class="text-ciel-400 italic">toute la Guinée</span>.`,
+    hero_lead:`Le Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée regroupe près de <strong class="text-white">1 400 structures sanitaires</strong> à travers <strong class="text-white">9 plateformes nationales</strong>, aux côtés du Ministère de la Santé et de l'Hygiène Publique.`,
+    hero_cta1:"Découvrir le réseau", hero_cta2:"Devenir membre",
+    hero_card_sub:"Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles",
+    stat_members_s:"structures membres", stat_platforms_s:"plateformes nationales",
+    stat1:"structures sanitaires privées représentées",
+    stat2:"plateformes nationales fédérées",
+    stat3:"du territoire national couvert par nos plateformes",
+    about_kicker:"Qui sommes-nous ?",
+    about_title:"Un réseau, neuf plateformes,<br>une seule coordination.",
+    about_p1:`Le <strong>Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée (RENOSPAC)</strong> est une organisation regroupant et représentant près de <strong>mille quatre cents (1 400) structures sanitaires privées</strong> en Guinée à travers neuf plateformes nationales.`,
+    about_p2:"Le secteur privé de la santé représente une part significative de l'offre de soins en complément du secteur public. Il contribue à l'accessibilité des services de santé, notamment dans les zones urbaines où la demande est forte. Les cliniques privées, associatives et confessionnelles jouent un rôle essentiel dans la diversification des services — consultations spécialisées, maternités, laboratoires, imagerie médicale — et participent à la réduction de la charge des formations sanitaires (FOSA) publiques et à l'amélioration de la couverture sanitaire nationale.",
+    about_p3:`Créé à l'initiative des responsables des associations de cliniques privées lucratives et non lucratives, le réseau constitue l'unité de coordination de toutes ces organisations sanitaires, avec l'orientation des autorités sanitaires à travers la <strong>Direction Nationale des Établissements Hospitaliers Publics et Privés (DNEHPP)</strong>.`,
+    about_link:"Voir nos neuf plateformes",
+    mission_kicker:"Notre mission",
+    mission_quote:"« Défendre les intérêts des cliniques privées, promouvoir leur conformité réglementaire et renforcer leur crédibilité institutionnelle. »",
+    goal_title:"Notre but",
+    goal_text:"Accompagner le Ministère de la Santé, à travers la DNEHPP, dans la mise en œuvre et l'exécution de la stratégie nationale de développement sanitaire privé en Guinée.",
+    where_title:"Où sommes-nous ?",
+    where_text:"À travers ses plateformes, le RENOSPAC représente les FOSA privées de santé sur toute l'étendue du territoire national.",
+    platforms_kicker:"Nos plateformes",
+    platforms_title:"Neuf plateformes nationales, un même engagement",
+    platforms_sub:"Les organisations membres qui composent l'unité de coordination du RENOSPAC.",
+    objectives_kicker:"Nos objectifs",
+    objectives_title:"Ce que nous faisons, concrètement",
+    gallery_kicker:"Galerie", gallery_title:"Le réseau en action",
+    gallery_sub:"Ateliers, panels et rencontres du RENOSPAC aux côtés du Ministère de la Santé et de l'Hygiène Publique.",
+    cap1:"Intervention d'un responsable du réseau lors d'une rencontre",
+    cap2:"Panel : « Quelles stratégies pour le contrôle des structures privées ? »",
+    cap3:"Les membres du RENOSPAC aux couleurs du réseau",
+    cap4:"Une équipe unie pour la santé privée en Guinée",
+    cap5:"« Moralisation du sous-secteur privé de la santé au cœur du RENOSPAC »",
+    cap6:"Les membres du réseau réunis devant un établissement sanitaire",
+    cap7:"Point de presse des responsables du RENOSPAC",
+    cap8:"Le réseau en visite de terrain auprès des structures membres",
+    contact_kicker:"Contact", contact_title:"Rejoignez le réseau ou écrivez-nous",
+    contact_sub:"Promoteur d'une FOSA privée, associative ou confessionnelle ? Le RENOSPAC vous oriente et vous accompagne, notamment dans le processus de recherche d'agréments.",
+    c_hq:"Siège", c_hq_v:"Conakry, République de Guinée",
+    c_tel:"Téléphone / WhatsApp", c_todo:"(à compléter)", c_todo2:"(à compléter)",
+    c_hours:"Horaires", c_hours_v:"Lundi – Vendredi · 8h30 – 17h00",
+    f_title:"Envoyez-nous un message", f_sub:"Nous vous répondrons dans les meilleurs délais.",
+    f_name:"Nom complet", f_name_ph:"Votre nom", f_tel:"Téléphone", f_email_ph:"vous@exemple.com",
+    f_subject:"Objet", f_msg_ph:"Votre message…", f_send:"Envoyer le message",
+    f_note:"Merci ! Votre message a bien été préparé. (Formulaire de démonstration — à relier à un service d'envoi.)",
+    f_options:["Adhésion au réseau","Recherche d'agrément","Partenariat","Autre demande"],
+    footer_bio:"Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée. Près de 1 400 structures sanitaires réunies au service de la santé de la population guinéenne, en partenariat avec le Ministère de la Santé et de l'Hygiène Publique via la DNEHPP.",
+    footer_map:"Plan du site", footer_partners:"Partenaires institutionnels",
+    footer_p1:"Ministère de la Santé et de l'Hygiène Publique", footer_p3:"Partenaires techniques et financiers",
+    footer_copy:"RENOSPAC — Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée. Tous droits réservés.",
+    footer_motto:"République de Guinée · Travail — Justice — Solidarité",
+    platform_names:{
+      FNCPG:"Fédération Nationale des Cliniques Privées de Guinée",
+      ONAMEL:"Ordre National de la Médecine Libérale",
+      ACS:"Les Actions Concertées pour la Santé",
+      SDT:"La Santé Droit pour Tous",
+      AHP:"L'Alliance des Hôpitaux Privés",
+      IMG:"L'Internationale Médicale Guinée",
+      ACMEG:"L'Action Médicale Guinée",
+      "RECOSAC-G":"Réseau Confessionnel des Organisations Sanitaires Chrétiennes de Guinée",
+      OCPH:"L'Organisation Catholique pour l'Humanitaire",
+    },
+    objectives:[
+      "Promouvoir le partenariat public–privé pour l'offre de services de santé de qualité à la population, en collaboration avec la DNEHPP.",
+      "Développer la coopération avec les partenaires techniques et financiers bi et multilatéraux.",
+      "Proposer au Ministère de la Santé et de l'Hygiène Publique, via la DNEHPP, des réformes du système sanitaire privé.",
+      "Participer à la coordination et au suivi des activités des structures sanitaires privées, associatives et confessionnelles.",
+      "Plaider pour la formation continue du personnel sanitaire privé.",
+      "Veiller à l'application des textes réglementant la création et la gestion des structures sanitaires privées et confessionnelles en Guinée.",
+      "Orienter et accompagner les promoteurs des FOSA privées dans le processus de recherche d'agréments.",
+      "Défendre les intérêts des membres du RENOSPAC.",
+    ],
+    ph_note:"Photo du RENOSPAC", ph_add:"Ajoutez le fichier",
+  },
+  en: {
+    topbar_loc:"Conakry, Republic of Guinea",
+    brand_sub:"National Network of Private Health Organisations",
+    nav_home:"Home", nav_about:"About us", nav_platforms:"Platforms",
+    nav_objectives:"Objectives", nav_gallery:"Gallery", nav_contact:"Contact", nav_cta:"Join us",
+    hero_kicker:"Republic of Guinea · Private healthcare",
+    hero_title:`Uniting the private health sector to serve <span class="text-ciel-400 italic">all of Guinea</span>.`,
+    hero_lead:`The National Network of Private, Associative and Faith-Based Health Organisations of Guinea brings together nearly <strong class="text-white">1,400 health facilities</strong> through <strong class="text-white">9 national platforms</strong>, alongside the Ministry of Health and Public Hygiene.`,
+    hero_cta1:"Discover the network", hero_cta2:"Become a member",
+    hero_card_sub:"National Network of Private, Associative and Faith-Based Health Organisations",
+    stat_members_s:"member facilities", stat_platforms_s:"national platforms",
+    stat1:"private health facilities represented",
+    stat2:"federated national platforms",
+    stat3:"of the national territory covered by our platforms",
+    about_kicker:"Who are we?",
+    about_title:"One network, nine platforms,<br>a single coordination.",
+    about_p1:`The <strong>National Network of Private, Associative and Faith-Based Health Organisations of Guinea (RENOSPAC)</strong> is an organisation bringing together and representing nearly <strong>one thousand four hundred (1,400) private health facilities</strong> in Guinea through nine national platforms.`,
+    about_p2:"The private health sector accounts for a significant share of care provision, complementing the public sector. It contributes to the accessibility of health services, particularly in urban areas where demand is high. Private, associative and faith-based clinics play an essential role in diversifying services — specialist consultations, maternity wards, laboratories, medical imaging — and help reduce the load on public health facilities (FOSA) while improving national health coverage.",
+    about_p3:`Created at the initiative of the leaders of for-profit and non-profit private clinic associations, the network forms the coordination unit of all these health organisations, under the guidance of the health authorities through the <strong>National Directorate of Public and Private Hospital Establishments (DNEHPP)</strong>.`,
+    about_link:"See our nine platforms",
+    mission_kicker:"Our mission",
+    mission_quote:"“To defend the interests of private clinics, promote their regulatory compliance and strengthen their institutional credibility.”",
+    goal_title:"Our goal",
+    goal_text:"To support the Ministry of Health, through the DNEHPP, in implementing and executing the national strategy for private health sector development in Guinea.",
+    where_title:"Where are we?",
+    where_text:"Through its platforms, RENOSPAC represents private health facilities (FOSA) across the entire national territory.",
+    platforms_kicker:"Our platforms",
+    platforms_title:"Nine national platforms, one shared commitment",
+    platforms_sub:"The member organisations that make up RENOSPAC's coordination unit.",
+    objectives_kicker:"Our objectives",
+    objectives_title:"What we do, concretely",
+    gallery_kicker:"Gallery", gallery_title:"The network in action",
+    gallery_sub:"RENOSPAC workshops, panels and meetings alongside the Ministry of Health and Public Hygiene.",
+    cap1:"A network representative speaking at a meeting",
+    cap2:"Panel: “What strategies for overseeing private facilities?”",
+    cap3:"RENOSPAC members wearing the network's colours",
+    cap4:"A team united for private healthcare in Guinea",
+    cap5:"“Ethical standards in the private health sub-sector, at the heart of RENOSPAC”",
+    cap6:"Network members gathered in front of a health facility",
+    cap7:"Press briefing by RENOSPAC leadership",
+    cap8:"The network on a field visit to member facilities",
+    contact_kicker:"Contact", contact_title:"Join the network or write to us",
+    contact_sub:"Running a private, associative or faith-based health facility? RENOSPAC guides and supports you, in particular through the accreditation process.",
+    c_hq:"Head office", c_hq_v:"Conakry, Republic of Guinea",
+    c_tel:"Phone / WhatsApp", c_todo:"(to be completed)", c_todo2:"(to be completed)",
+    c_hours:"Opening hours", c_hours_v:"Monday – Friday · 8:30 am – 5:00 pm",
+    f_title:"Send us a message", f_sub:"We will get back to you as soon as possible.",
+    f_name:"Full name", f_name_ph:"Your name", f_tel:"Phone", f_email_ph:"you@example.com",
+    f_subject:"Subject", f_msg_ph:"Your message…", f_send:"Send message",
+    f_note:"Thank you! Your message has been prepared. (Demo form — connect it to a sending service.)",
+    f_options:["Joining the network","Accreditation request","Partnership","Other enquiry"],
+    footer_bio:"National Network of Private, Associative and Faith-Based Health Organisations of Guinea. Nearly 1,400 health facilities united to serve the health of the Guinean population, in partnership with the Ministry of Health and Public Hygiene through the DNEHPP.",
+    footer_map:"Site map", footer_partners:"Institutional partners",
+    footer_p1:"Ministry of Health and Public Hygiene", footer_p3:"Technical and financial partners",
+    footer_copy:"RENOSPAC — National Network of Private, Associative and Faith-Based Health Organisations of Guinea. All rights reserved.",
+    footer_motto:"Republic of Guinea · Work — Justice — Solidarity",
+    platform_names:{
+      FNCPG:"National Federation of Private Clinics of Guinea",
+      ONAMEL:"National Order of Independent Medical Practice",
+      ACS:"Concerted Actions for Health",
+      SDT:"Health as a Right for All",
+      AHP:"Alliance of Private Hospitals",
+      IMG:"International Medical Guinea",
+      ACMEG:"Medical Action Guinea",
+      "RECOSAC-G":"Faith-Based Network of Christian Health Organisations of Guinea",
+      OCPH:"Catholic Organisation for Humanitarian Action",
+    },
+    objectives:[
+      "Promote public–private partnership to deliver quality health services to the population, in collaboration with the DNEHPP.",
+      "Develop cooperation with bilateral and multilateral technical and financial partners.",
+      "Propose reforms of the private health system to the Ministry of Health and Public Hygiene through the DNEHPP.",
+      "Take part in coordinating and monitoring the activities of private, associative and faith-based health facilities.",
+      "Advocate for continuous training of private health personnel.",
+      "Ensure the application of the regulations governing the creation and management of private and faith-based health facilities in Guinea.",
+      "Guide and support promoters of private health facilities through the accreditation process.",
+      "Defend the interests of RENOSPAC members.",
+    ],
+    ph_note:"RENOSPAC photo", ph_add:"Add the file",
+  },
+};
+
+const SIGLES = ['FNCPG','ONAMEL','ACS','SDT','AHP','IMG','ACMEG','RECOSAC-G','OCPH'];
+const CARD_STYLES = [
+  { text:'text-ciel-500',  chip:'bg-ciel-500/10 text-ciel-500' },
+  { text:'text-vitale-500',chip:'bg-vitale-500/10 text-vitale-500' },
+  { text:'text-lime-600',  chip:'bg-lime-600/10 text-lime-600' },
+];
+
+let LANG = 'fr';
+try { LANG = new URLSearchParams(location.search).get('lang') || localStorage.getItem('renospac-lang') || 'fr'; } catch(e) {}
+if (!I18N[LANG]) LANG = 'fr';
+
+function renderGrids() {
+  const t = I18N[LANG];
+  document.getElementById('platforms-grid').innerHTML = SIGLES.map((s,i)=>{
+    const st = CARD_STYLES[i%3];
+    return `
+    <div class="platform-card reveal is-visible bg-white border border-petrol-900/10 rounded-2xl p-7">
+      <div class="flex items-center justify-between">
+        <span class="font-display font-black text-xl ${st.text}">${s}</span>
+        <span class="w-9 h-9 rounded-full ${st.chip} flex items-center justify-center">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"/></svg>
+        </span>
+      </div>
+      <p class="mt-3 text-[15px] text-petrol-700 leading-snug">${t.platform_names[s]}</p>
+    </div>`;
+  }).join('');
+  document.getElementById('objectives-grid').innerHTML = t.objectives.map((o,i)=>`
+    <div class="reveal is-visible flex gap-5 bg-white rounded-2xl border border-petrol-900/10 p-6 shadow-sm">
+      <span class="shrink-0 w-10 h-10 rounded-xl bg-petrol-950 text-lime-500 font-display font-black flex items-center justify-center">${String(i+1).padStart(2,'0')}</span>
+      <p class="text-[15px] text-petrol-700 leading-relaxed">${o}</p>
+    </div>`).join('');
+  document.querySelectorAll('#platforms-grid .reveal, #objectives-grid .reveal').forEach(el=> io.observe(el));
+}
+
+function applyLang(lang) {
+  LANG = I18N[lang] ? lang : 'fr';
+  const t = I18N[LANG];
+  document.documentElement.lang = LANG;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ const k=el.dataset.i18n; if(t[k]!=null) el.textContent = t[k]; });
+  document.querySelectorAll('[data-i18n-html]').forEach(el=>{ const k=el.dataset.i18nHtml; if(t[k]!=null) el.innerHTML = t[k]; });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{ const k=el.dataset.i18nPh; if(t[k]!=null) el.placeholder = t[k]; });
+  const sel = document.getElementById('f-select');
+  sel.innerHTML = t.f_options.map(o=>`<option>${o}</option>`).join('');
+  document.querySelectorAll('.lang-btn').forEach(b=> b.classList.toggle('active', b.dataset.lang===LANG));
+  document.querySelectorAll('.ph-tile [data-ph-caption]').forEach(el=>{ el.textContent = t[el.dataset.phCaption] || t.ph_note; });
+  renderGrids();
+  try { localStorage.setItem('renospac-lang', LANG); } catch(e) {}
+}
+
+document.querySelectorAll('.lang-btn').forEach(b=> b.addEventListener('click', ()=> applyLang(b.dataset.lang)));
+
+/* ── Missing-photo graceful fallback ──────────────── */
+function swapForPlaceholder(img){
+  const t = I18N[LANG];
+  const key = img.dataset.captionKey;
+  const ph = document.createElement('div');
+  ph.className = 'ph-tile w-full h-full flex flex-col items-center justify-center text-center p-6 gap-3';
+  ph.innerHTML = `<img src="assets/logo.png" alt="" class="h-16 w-16 object-contain opacity-70 rounded-full">
+    <p class="text-petrol-700/70 text-xs font-medium max-w-[220px]" data-ph-caption="${key}">${t[key]||t.ph_note}</p>
+    <p class="text-petrol-700/40 text-[10px]">${t.ph_add} <code>${img.getAttribute('src')}</code></p>`;
+  img.replaceWith(ph);
+}
+document.querySelectorAll('.site-photo').forEach(img=>{
+  if (img.complete && img.naturalWidth === 0) swapForPlaceholder(img);
+  else img.addEventListener('error', ()=> swapForPlaceholder(img));
+});
+
+/* ── Mobile drawer ────────────────────────────────── */
+const menuBtn = document.getElementById('menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+menuBtn.addEventListener('click', ()=> mobileMenu.classList.toggle('hidden'));
+document.querySelectorAll('.mobile-link').forEach(a=> a.addEventListener('click', ()=> mobileMenu.classList.add('hidden')));
+
+/* ── Sticky nav shadow ────────────────────────────── */
+const nav = document.getElementById('mainnav');
+addEventListener('scroll', ()=> nav.classList.toggle('scrolled', scrollY > 10), {passive:true});
+
+/* ── Scroll reveal + counters ─────────────────────── */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(!e.isIntersecting) return;
+    e.target.classList.add('is-visible');
+    e.target.querySelectorAll('.counter:not(.done)').forEach(c=>{
+      c.classList.add('done');
+      const target = +c.dataset.target, t0 = performance.now(), dur = 1600;
+      const tick = now=>{
+        const p = Math.min((now-t0)/dur, 1), eased = 1-Math.pow(1-p,3);
+        c.textContent = Math.round(target*eased).toLocaleString(LANG==='fr'?'fr-FR':'en-US');
+        if(p<1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    });
+    io.unobserve(e.target);
+  });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=> io.observe(el));
+
+/* ── Lightbox ─────────────────────────────────────── */
+const lb = document.getElementById('lightbox'), lbImg = document.getElementById('lightbox-img'), lbCap = document.getElementById('lightbox-caption');
+document.querySelectorAll('.gallery-item').forEach(fig=>{
+  fig.addEventListener('click', ()=>{
+    const img = fig.querySelector('img.site-photo');
+    if(!img || !img.isConnected) return;         // photo replaced by placeholder
+    lbImg.src = img.src; lbImg.alt = img.alt;
+    lbCap.textContent = I18N[LANG][img.dataset.captionKey] || '';
+    lb.classList.remove('hidden'); lb.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  });
+});
+const closeLb = ()=>{ lb.classList.add('hidden'); lb.classList.remove('flex'); document.body.style.overflow=''; };
+lb.addEventListener('click', closeLb);
+document.getElementById('lightbox-close').addEventListener('click', closeLb);
+addEventListener('keydown', e=>{ if(e.key==='Escape') closeLb(); });
+
+/* ── Demo form ────────────────────────────────────── */
+document.getElementById('contact-form').addEventListener('submit', e=>{
+  e.preventDefault();
+  document.getElementById('form-note').classList.remove('hidden');
+  e.target.reset();
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+applyLang(LANG);
+</script>
+</body>
+</html>
