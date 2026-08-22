@@ -294,7 +294,7 @@
     </div>
     <p class="text-petrol-700/80 max-w-md text-sm" data-i18n="gallery_sub">Ateliers, panels et rencontres du RENOSPAC aux côtés du Ministère de la Santé et de l'Hygiène Publique.</p>
   </div>
-  <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+  <div id="gallery-grid" class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
     <figure class="gallery-item reveal relative rounded-2xl overflow-hidden cursor-zoom-in aspect-[4/3] lg:col-span-2 lg:aspect-auto">
       <img src="assets/photo-2.jpg" data-caption-key="cap2" alt="Atelier du RENOSPAC en salle plénière" class="site-photo w-full h-full object-cover">
       <figcaption class="caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-petrol-950/90 to-transparent text-white text-sm px-5 pt-10 pb-4" data-i18n="cap2"></figcaption>
@@ -501,6 +501,12 @@ const I18N = {
     cap6:"Les membres du réseau réunis devant un établissement sanitaire",
     cap7:"Point de presse des responsables du RENOSPAC",
     cap8:"Le réseau en visite de terrain auprès des structures membres",
+    capx_msp:"Séance de travail avec le Ministère de la Santé et de l'Hygiène Publique",
+    capx_visit:"Démarches institutionnelles auprès des autorités",
+    capx_event:"Les membres du réseau lors d'un événement de santé",
+    capx_shirt:"Les membres aux couleurs du RENOSPAC",
+    capx_talk:"Intervention lors d'un atelier de santé",
+    capx_work:"Atelier de travail des membres du réseau",
     contact_kicker:"Contact", contact_title:"Rejoignez le réseau ou écrivez-nous",
     contact_sub:"Promoteur d'une FOSA privée, associative ou confessionnelle ? Le RENOSPAC vous oriente et vous accompagne, notamment dans le processus de recherche d'agréments.",
     c_hq:"Siège", c_hq_v:"Conakry, République de Guinée",
@@ -580,6 +586,12 @@ const I18N = {
     cap6:"Network members gathered in front of a health facility",
     cap7:"Press briefing by RENOSPAC leadership",
     cap8:"The network on a field visit to member facilities",
+    capx_msp:"Working session with the Ministry of Health and Public Hygiene",
+    capx_visit:"Institutional outreach to the authorities",
+    capx_event:"Network members at a health event",
+    capx_shirt:"Members wearing the RENOSPAC colours",
+    capx_talk:"Speaking at a health workshop",
+    capx_work:"Working session of network members",
     contact_kicker:"Contact", contact_title:"Join the network or write to us",
     contact_sub:"Running a private, associative or faith-based health facility? RENOSPAC guides and supports you, in particular through the accreditation process.",
     c_hq:"Head office", c_hq_v:"Conakry, Republic of Guinea",
@@ -670,6 +682,20 @@ function applyLang(lang) {
 }
 
 document.querySelectorAll('.lang-btn').forEach(b=> b.addEventListener('click', ()=> applyLang(b.dataset.lang)));
+
+/* ── Extra gallery photos ─────────────────────────── */
+const EXTRA_PHOTOS = [
+  ['photo-11.jpg','capx_msp'], ['photo-16.jpg','capx_msp'], ['photo-17.jpg','capx_msp'],
+  ['photo-18.jpg','capx_msp'], ['photo-19.jpg','capx_msp'], ['photo-20.jpg','capx_msp'],
+  ['photo-21.jpg','capx_msp'], ['photo-22.jpg','capx_msp'],
+  ['photo-9.jpg','capx_visit'], ['photo-10.jpg','capx_event'],
+  ['photo-12.jpg','capx_shirt'], ['photo-13.jpg','capx_talk'], ['photo-23.jpg','capx_work'],
+];
+document.getElementById('gallery-grid').insertAdjacentHTML('beforeend', EXTRA_PHOTOS.map(([f,k])=>`
+  <figure class="gallery-item reveal relative rounded-2xl overflow-hidden cursor-zoom-in aspect-[4/3]">
+    <img src="assets/${f}" data-caption-key="${k}" alt="" class="site-photo w-full h-full object-cover" loading="lazy">
+    <figcaption class="caption absolute inset-x-0 bottom-0 bg-gradient-to-t from-petrol-950/90 to-transparent text-white text-sm px-5 pt-10 pb-4" data-i18n="${k}"></figcaption>
+  </figure>`).join(''));
 
 /* ── Missing-photo graceful fallback ──────────────── */
 function swapForPlaceholder(img){
