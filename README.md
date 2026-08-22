@@ -3,7 +3,14 @@
 Site vitrine bilingue (Français par défaut · English toggle) du **RENOSPAC** — Réseau National des
 Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée.
 
-- `index.html` — la page complète (HTML + un peu de JavaScript, aucune dépendance serveur)
+Site multi-pages :
+
+- `index.html` — accueil (carrousel de photos, chiffres clés, aperçus)
+- `apropos.html` — Qui sommes-nous, mission, objectifs, plateformes
+- `activites.html` — projets et actions du réseau
+- `galerie.html` — galerie photo complète avec visionneuse
+- `contact.html` — coordonnées, carte et formulaire
+- `assets/site.js` — traductions FR/EN et comportements partagés
 - `.github/workflows/deploy-pages.yml` — publication automatique sur GitHub Pages à chaque modification
 - `assets/tailwind.css` — styles Tailwind compilés (déjà générés, rien à faire)
 - `assets/logo.png` — logo officiel (extrait du document fourni)
