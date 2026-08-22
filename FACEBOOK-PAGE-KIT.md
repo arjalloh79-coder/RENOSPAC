@@ -29,10 +29,11 @@ Tout est prêt à copier-coller. La création prend ~5 minutes.
 
 ## Coordonnées à renseigner
 
-- Téléphone / WhatsApp : *(numéro officiel)*
-- Email : *(email officiel)*
-- Site web : *(l'adresse GitHub Pages / Vercel une fois le site en ligne)*
-- Adresse : Conakry, République de Guinée
+- Téléphone bureau : +224 620 59 10 68
+- Mobile / WhatsApp : +224 624 73 70 88
+- Email : renospacgui@gmail.com
+- Site web : https://arjalloh79-coder.github.io/RENOSPAC/
+- Adresse : Bureau de la Direction de la Santé de la Ville de Conakry, Lambagny, Commune de Ratoma, Conakry – Guinée · 030 B.P. 21
 - Horaires : Lun–Ven, 8h30–17h00
 
 ## 3 premières publications (prêtes à poster)
