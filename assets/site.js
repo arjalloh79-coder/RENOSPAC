@@ -8,6 +8,7 @@
 const I18N = {
   fr: {
     topbar_loc:"Conakry, République de Guinée",
+    lang_label:"Langue",
     brand_sub:"Réseau National des Organisations Sanitaires Privées",
     nav_home:"Accueil", nav_about:"Qui sommes-nous", nav_activities:"Activités",
     nav_governance:"Gouvernance", nav_news:"Actualités",
@@ -179,6 +180,7 @@ const I18N = {
   },
   en: {
     topbar_loc:"Conakry, Republic of Guinea",
+    lang_label:"Language",
     brand_sub:"National Network of Private Health Organisations",
     nav_home:"Home", nav_about:"About us", nav_activities:"Activities",
     nav_governance:"Governance", nav_news:"News",
