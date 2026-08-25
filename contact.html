@@ -122,7 +122,8 @@
     <nav class="hidden lg:flex items-center gap-8 text-[15px] font-medium">
       <a href="index.html" class="nav-link hover:text-ciel-500 transition-colors" data-i18n="nav_home">Accueil</a>
       <a href="apropos.html" class="nav-link hover:text-ciel-500 transition-colors" data-i18n="nav_about">Qui sommes-nous</a>
-      <a href="activites.html" class="nav-link hover:text-ciel-500 transition-colors" data-i18n="nav_activities">Activités</a>
+      <a href="gouvernance.html" class="nav-link hover:text-ciel-500 transition-colors" data-i18n="nav_governance">Gouvernance</a>
+      <a href="actualites.html" class="nav-link hover:text-ciel-500 transition-colors" data-i18n="nav_news">Actualités</a>
       <a href="galerie.html" class="nav-link hover:text-ciel-500 transition-colors" data-i18n="nav_gallery">Galerie</a>
       <a href="contact.html" class="nav-link active hover:text-ciel-500 transition-colors" data-i18n="nav_contact">Contact</a>
     </nav>
@@ -140,7 +141,8 @@
     <nav class="px-6 py-4 flex flex-col gap-1 text-base font-medium">
       <a href="index.html" class="mobile-link py-2.5 border-b border-petrol-900/5" data-i18n="nav_home">Accueil</a>
       <a href="apropos.html" class="mobile-link py-2.5 border-b border-petrol-900/5" data-i18n="nav_about">Qui sommes-nous</a>
-      <a href="activites.html" class="mobile-link py-2.5 border-b border-petrol-900/5" data-i18n="nav_activities">Activités</a>
+      <a href="gouvernance.html" class="mobile-link py-2.5 border-b border-petrol-900/5" data-i18n="nav_governance">Gouvernance</a>
+      <a href="actualites.html" class="mobile-link py-2.5 border-b border-petrol-900/5" data-i18n="nav_news">Actualités</a>
       <a href="galerie.html" class="mobile-link py-2.5 border-b border-petrol-900/5" data-i18n="nav_gallery">Galerie</a>
       <a href="contact.html" class="mobile-link py-2.5 border-b border-petrol-900/5 text-ciel-500 font-semibold" data-i18n="nav_contact">Contact</a>
       <a href="contact.html" class="mobile-link mt-3 bg-vitale-500 text-white text-center font-semibold py-3 rounded-full" data-i18n="nav_cta">Nous rejoindre</a>
@@ -181,8 +183,11 @@
         <div><p class="font-semibold" data-i18n="c_hours">Horaires</p><p class="text-petrol-700" data-i18n="c_hours_v"></p></div>
       </li>
     </ul>
-    <div class="mt-10 rounded-2xl overflow-hidden border border-petrol-900/10 shadow-sm aspect-[16/9]">
-      <iframe src="https://www.google.com/maps?q=Lambanyi,+Ratoma,+Conakry,+Guinée&output=embed" class="w-full h-full" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte — Lambagny, Ratoma, Conakry"></iframe>
+    <div id="emplacement" class="mt-10 scroll-mt-28">
+      <p class="text-vitale-500 font-semibold tracking-[0.2em] uppercase text-xs mb-3 flex items-center gap-2"><span class="h-px w-8 bg-vitale-500"></span> <span data-i18n="location_kicker">Localisation</span></p>
+      <div class="rounded-2xl overflow-hidden border border-petrol-900/10 shadow-sm aspect-[16/9]">
+        <iframe src="https://www.google.com/maps?q=Lambanyi,+Ratoma,+Conakry,+Guinée&output=embed" class="w-full h-full" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Carte — Lambagny, Ratoma, Conakry"></iframe>
+      </div>
     </div>
   </div>
   <div class="reveal" style="transition-delay:.1s">
@@ -235,7 +240,8 @@
       <ul class="space-y-2.5">
         <li><a href="index.html" class="hover:text-lime-500 transition-colors" data-i18n="nav_home">Accueil</a></li>
         <li><a href="apropos.html" class="hover:text-lime-500 transition-colors" data-i18n="nav_about">Qui sommes-nous</a></li>
-        <li><a href="activites.html" class="hover:text-lime-500 transition-colors" data-i18n="nav_activities">Activités</a></li>
+        <li><a href="gouvernance.html" class="hover:text-lime-500 transition-colors" data-i18n="nav_governance">Gouvernance</a></li>
+        <li><a href="actualites.html" class="hover:text-lime-500 transition-colors" data-i18n="nav_news">Actualités</a></li>
         <li><a href="galerie.html" class="hover:text-lime-500 transition-colors" data-i18n="nav_gallery">Galerie</a></li>
         <li><a href="contact.html" class="hover:text-lime-500 transition-colors" data-i18n="nav_contact">Contact</a></li>
       </ul>
@@ -252,6 +258,7 @@
         <li><a href="tel:+224620591068" class="hover:text-lime-500 transition-colors">+224 620 59 10 68</a></li>
         <li><a href="https://wa.me/224624737088" target="_blank" rel="noopener" class="hover:text-lime-500 transition-colors">+224 624 73 70 88 (WhatsApp)</a></li>
         <li><a href="mailto:renospacgui@gmail.com" class="hover:text-lime-500 transition-colors">renospacgui@gmail.com</a></li>
+        <li><a href="contact.html#emplacement" class="hover:text-lime-500 transition-colors" data-i18n="location_footer_link">Voir sur la carte</a></li>
       </ul>
     </div>
   </div>
