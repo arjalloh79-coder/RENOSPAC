@@ -54,6 +54,8 @@ const I18N = {
     role_tresorier:"Trésorier",
     role_conseiller:"Conseiller Juridique",
     role_coord_medical:"Coordinateur Médical",
+    team1_role:"Chargé des Affaires Extérieures",
+    team1_bio:"Responsable des partenariats extérieurs et de la communication.",
 
     /* À propos — new sub-sections */
     history_kicker:"Notre histoire",
@@ -226,6 +228,8 @@ const I18N = {
     role_tresorier:"Treasurer",
     role_conseiller:"Legal Advisor",
     role_coord_medical:"Medical Coordinator",
+    team1_role:"External Affairs Officer",
+    team1_bio:"Managing external partnerships and communications.",
 
     /* About — new sub-sections */
     history_kicker:"Our history",
@@ -382,6 +386,14 @@ const GALLERY_PHOTOS = [
   ['photo-12.jpg','capx_shirt'], ['photo-13.jpg','capx_talk'], ['photo-23.jpg','capx_work'],
 ];
 
+/* Team / Leadership — real, confirmed members go here. One batch edit
+   adds/updates everyone at once; each entry needs a matching roleKey
+   (and optional bioKey) added to both FR and EN blocks in I18N above.
+   Names are not translated; titles and bios are, via the i18n keys. */
+const TEAM_MEMBERS = [
+  { img: 'assets/charge-affaires-exterieures.jpg', name: 'Mamadou Diallo', roleKey: 'team1_role', bioKey: 'team1_bio' },
+];
+
 let LANG = 'fr';
 try { LANG = new URLSearchParams(location.search).get('lang') || localStorage.getItem('renospac-lang') || 'fr'; } catch(e) {}
 if (!I18N[LANG]) LANG = 'fr';
@@ -454,6 +466,32 @@ function renderGrids() {
   document.querySelectorAll('#platforms-grid .reveal, #objectives-grid .reveal').forEach(el => io.observe(el));
 }
 
+/* ── Team / Leadership renderer (gouvernance.html) ───────────── */
+function teamImgError(img) {
+  const wrap = img.parentElement;
+  wrap.innerHTML = `<svg class="w-9 h-9 text-ciel-500/60" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>`;
+}
+function renderTeam() {
+  const tg = document.getElementById('team-grid');
+  if (!tg) return;
+  const t = I18N[LANG];
+  /* Idempotent: drop any previously-injected real-member cards before
+     re-inserting, so switching language doesn't duplicate them. The
+     generic role-placeholder cards already in the HTML are left alone. */
+  tg.querySelectorAll('.team-real-card').forEach(el => el.remove());
+  const cards = TEAM_MEMBERS.map((m, i) => `
+    <div class="team-real-card reveal is-visible bg-white rounded-2xl border border-petrol-900/10 p-6 text-center shadow-sm" style="transition-delay:${(i % 3) * .08}s">
+      <div class="w-20 h-20 mx-auto rounded-full bg-ciel-50 border border-ciel-500/20 overflow-hidden flex items-center justify-center">
+        <img src="${m.img}" alt="${m.name}" class="w-full h-full object-cover" loading="lazy" onerror="teamImgError(this)">
+      </div>
+      <p class="mt-4 font-display font-bold text-petrol-900">${m.name}</p>
+      <p class="text-sm text-ciel-500 font-semibold" data-i18n="${m.roleKey}">${t[m.roleKey] || ''}</p>
+      ${m.bioKey ? `<p class="mt-2 text-xs text-petrol-700/70 leading-relaxed" data-i18n="${m.bioKey}">${t[m.bioKey] || ''}</p>` : ''}
+    </div>`).join('');
+  tg.insertAdjacentHTML('afterbegin', cards);
+  tg.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
 /* ── Full gallery renderer (galerie.html) ────────────────────── */
 function renderGallery() {
   const g = document.getElementById('full-gallery');
@@ -481,6 +519,7 @@ function applyLang(lang) {
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.dataset.lang === LANG));
   document.querySelectorAll('.ph-tile [data-ph-caption]').forEach(el => { el.textContent = t[el.dataset.phCaption] || t.ph_note; });
   renderGrids();
+  renderTeam();
   try { localStorage.setItem('renospac-lang', LANG); } catch(e) {}
 }
 document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
