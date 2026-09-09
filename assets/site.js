@@ -14,7 +14,7 @@ const I18N = {
     nav_governance:"Gouvernance", nav_news:"Actualités",
     nav_gallery:"Galerie", nav_contact:"Contact", nav_cta:"Nous rejoindre",
     hero_welcome:"Bienvenue sur le site officiel du RENOSPAC",
-    ad_slot_label:"Espace publicitaire", ad_slot_sub:"Votre structure ou votre marque ici — contactez-nous",
+    ad_slot_label:"Faites de la publicité ici", ad_slot_sub:"Touchez 1 400 structures sanitaires à travers la Guinée — contactez-nous →",
     hero_kicker:"République de Guinée · Santé privée",
     hero_title:`Unir le secteur sanitaire privé au service de <span class="text-ciel-400 italic">toute la Guinée</span>.`,
     hero_lead:`Près de <strong class="text-white">1 400 structures sanitaires</strong> réunies à travers <strong class="text-white">9 plateformes nationales</strong>, aux côtés du Ministère de la Santé et de l'Hygiène Publique.`,
@@ -45,7 +45,7 @@ const I18N = {
     /* Direction & Gouvernance page */
     gov_kicker:"Direction & Gouvernance",
     gov_title:"L'équipe qui pilote le réseau",
-    gov_sub:"Les responsables du RENOSPAC — informations à compléter par le réseau.",
+    gov_sub:"Les membres du Bureau exécutif du RENOSPAC.",
     gov_team_note:"Membres du Bureau exécutif de RENOSPAC.",
     gov_placeholder_name:"[Nom à renseigner]",
     team1_role:"Chargé des Affaires Extérieures",
@@ -92,6 +92,27 @@ const I18N = {
     news_read:"Lire plus",
     news_sidebar_title:"Liens rapides",
     news_sidebar_contact:"Une question ? Contactez-nous",
+    news_close:"Fermer",
+
+    news_a1_title:"RENOSPAC : une seule coordination pour 1 400 structures sanitaires privées",
+    news_a1_excerpt:"Présent dans toute la Guinée à travers neuf plateformes nationales, le RENOSPAC coordonne l'action des cliniques privées, associatives et confessionnelles auprès du Ministère de la Santé.",
+    news_a1_body:"<p>Le Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée (RENOSPAC) regroupe et représente près de mille quatre cents (1 400) structures sanitaires privées en Guinée à travers neuf plateformes nationales.</p><p>Créé à l'initiative des responsables des associations de cliniques privées lucratives et non lucratives, le réseau constitue l'unité de coordination de toutes ces organisations sanitaires, avec l'orientation des autorités sanitaires à travers la Direction Nationale des Établissements Hospitaliers Publics et Privés (DNEHPP).</p><p>Sa mission : défendre les intérêts des cliniques privées, promouvoir leur conformité réglementaire et renforcer leur crédibilité institutionnelle, au bénéfice de la population guinéenne.</p>",
+
+    news_a2_title:"Les neuf plateformes membres du RENOSPAC, en bref",
+    news_a2_excerpt:"FNCPG, ONAMEL, ACS, SDT, AHP, IMG, ACMEG, RECOSAC-G, OCPH : neuf organisations, une seule voix pour le secteur sanitaire privé guinéen.",
+    news_a2_body:"<p>Le RENOSPAC fédère neuf plateformes nationales, chacune représentant une composante du secteur sanitaire privé, associatif ou confessionnel :</p><ul class='mt-2 space-y-1.5 list-disc list-inside text-petrol-700'><li><strong>FNCPG</strong> — Fédération Nationale des Cliniques Privées de Guinée</li><li><strong>ONAMEL</strong> — Ordre National de la Médecine Libérale</li><li><strong>ACS</strong> — Les Actions Concertées pour la Santé</li><li><strong>SDT</strong> — La Santé Droit pour Tous</li><li><strong>AHP</strong> — L'Alliance des Hôpitaux Privés</li><li><strong>IMG</strong> — L'Internationale Médicale Guinée</li><li><strong>ACMEG</strong> — L'Action Médicale Guinée</li><li><strong>RECOSAC-G</strong> — Réseau Confessionnel des Organisations Sanitaires Chrétiennes de Guinée</li><li><strong>OCPH</strong> — L'Organisation Catholique pour l'Humanitaire</li></ul><p class='mt-3'>Ensemble, elles forment une seule coordination pour représenter les formations sanitaires privées sur toute l'étendue du territoire national.</p>",
+
+    news_a3_title:"Moralisation du secteur privé de la santé : une priorité pour le RENOSPAC",
+    news_a3_excerpt:"Campagne menée avec le Ministère de la Santé et de l'Hygiène Publique pour renforcer l'éthique, la conformité réglementaire et la qualité des soins.",
+    news_a3_body:"<p>Le RENOSPAC mène, aux côtés du Ministère de la Santé et de l'Hygiène Publique, une campagne de moralisation du sous-secteur privé de la santé visant à renforcer l'éthique, la conformité réglementaire et la qualité des soins dans les structures sanitaires privées.</p><p>Le secteur privé de la santé représente une part significative de l'offre de soins en complément du secteur public. Il contribue à l'accessibilité des services de santé, notamment dans les zones urbaines où la demande est forte, et participe à la réduction de la charge des formations sanitaires (FOSA) publiques.</p><p>C'est pourquoi le respect des normes, la transparence et la crédibilité institutionnelle des cliniques, associations et structures confessionnelles membres restent une priorité constante du réseau, en lien avec la DNEHPP.</p>",
+
+    news_a4_title:"Comment adhérer au RENOSPAC : l'accompagnement des promoteurs de structures sanitaires",
+    news_a4_excerpt:"Vous êtes promoteur d'une structure sanitaire privée, associative ou confessionnelle ? Le RENOSPAC vous oriente dans vos démarches, notamment pour l'agrément.",
+    news_a4_body:"<p>Le RENOSPAC oriente et accompagne les promoteurs de structures sanitaires privées, associatives ou confessionnelles, notamment dans le processus de recherche d'agréments, en lien avec la Direction Nationale des Établissements Hospitaliers Publics et Privés (DNEHPP).</p><p>Rejoindre le réseau, c'est intégrer l'une des neuf plateformes nationales membres et bénéficier d'une coordination commune face aux autorités sanitaires, ainsi que d'un relais pour vos démarches réglementaires.</p><p>Pour entamer les démarches d'adhésion, contactez le réseau par téléphone, WhatsApp ou via le formulaire du site — l'équipe du Bureau exécutif vous orientera vers la plateforme correspondant à votre structure.</p>",
+
+    news_a5_title:"Le rôle du secteur privé dans le système de santé guinéen",
+    news_a5_excerpt:"Cliniques privées, associatives et confessionnelles : un maillon essentiel de l'offre de soins aux côtés du secteur public.",
+    news_a5_body:"<p>Le secteur privé de la santé représente une part significative de l'offre de soins en complément du secteur public. Il contribue à l'accessibilité des services de santé, notamment dans les zones urbaines où la demande est forte.</p><p>Les cliniques privées, associatives et confessionnelles jouent un rôle essentiel dans la diversification des services — consultations spécialisées, maternités, laboratoires, imagerie médicale — et participent à la réduction de la charge des formations sanitaires (FOSA) publiques et à l'amélioration de la couverture sanitaire nationale.</p><p>Le RENOSPAC constitue l'unité de coordination de ces structures, avec l'orientation des autorités sanitaires à travers la DNEHPP.</p>",
 
     location_kicker:"Localisation", location_title:"Nous trouver",
     location_footer_link:"Voir sur la carte",
@@ -137,7 +158,8 @@ const I18N = {
     f_title:"Envoyez-nous un message", f_sub:"Nous vous répondrons dans les meilleurs délais.",
     f_name:"Nom complet", f_name_ph:"Votre nom", f_tel:"Téléphone", f_email_ph:"vous@exemple.com",
     f_subject:"Objet", f_msg_ph:"Votre message…", f_send:"Envoyer le message",
-    f_note:"Merci ! Votre message a bien été préparé. (Formulaire de démonstration — à relier à un service d'envoi.)",
+    f_note:"Merci ! Votre message a bien été envoyé. Nous vous répondrons dans les plus brefs délais.",
+    f_error:"Une erreur est survenue. Veuillez réessayer ou nous écrire directement à renospacgui@gmail.com.",
     f_options:["Adhésion au réseau","Recherche d'agrément","Partenariat","Autre demande"],
     footer_bio:"Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée. Près de 1 400 structures sanitaires réunies au service de la santé de la population guinéenne, en partenariat avec le Ministère de la Santé et de l'Hygiène Publique via la DNEHPP.",
     footer_map:"Plan du site", footer_partners:"Partenaires institutionnels",
@@ -192,7 +214,7 @@ const I18N = {
     nav_governance:"Governance", nav_news:"News",
     nav_gallery:"Gallery", nav_contact:"Contact", nav_cta:"Join us",
     hero_welcome:"Welcome to the official RENOSPAC website",
-    ad_slot_label:"Advertisement space", ad_slot_sub:"Your organisation or brand here — contact us",
+    ad_slot_label:"Advertise here", ad_slot_sub:"Reach 1,400 health facilities across Guinea — contact us →",
     hero_kicker:"Republic of Guinea · Private healthcare",
     hero_title:`Uniting the private health sector to serve <span class="text-ciel-400 italic">all of Guinea</span>.`,
     hero_lead:`Nearly <strong class="text-white">1,400 health facilities</strong> united through <strong class="text-white">9 national platforms</strong>, alongside the Ministry of Health and Public Hygiene.`,
@@ -223,7 +245,7 @@ const I18N = {
     /* Direction & Governance page */
     gov_kicker:"Direction & Governance",
     gov_title:"The team leading the network",
-    gov_sub:"RENOSPAC's leadership — information to be completed by the network.",
+    gov_sub:"The members of the RENOSPAC Executive Bureau.",
     gov_team_note:"RENOSPAC Executive Bureau members.",
     gov_placeholder_name:"[Name to be added]",
     team1_role:"External Affairs Officer",
@@ -270,6 +292,27 @@ const I18N = {
     news_read:"Read more",
     news_sidebar_title:"Quick links",
     news_sidebar_contact:"A question? Contact us",
+    news_close:"Close",
+
+    news_a1_title:"RENOSPAC: one coordination body for 1,400 private health facilities",
+    news_a1_excerpt:"Present across Guinea through nine national platforms, RENOSPAC coordinates the work of private, associative and faith-based clinics with the Ministry of Health.",
+    news_a1_body:"<p>The Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée (RENOSPAC) brings together and represents nearly fourteen hundred (1,400) private health facilities in Guinea through nine national platforms.</p><p>Created at the initiative of the leaders of for-profit and non-profit private clinic associations, the network is the coordination unit for all these health organisations, under the guidance of the health authorities through the Direction Nationale des Établissements Hospitaliers Publics et Privés (DNEHPP).</p><p>Its mission: to defend the interests of private clinics, promote their regulatory compliance and strengthen their institutional credibility, for the benefit of the Guinean population.</p>",
+
+    news_a2_title:"RENOSPAC's nine member platforms, at a glance",
+    news_a2_excerpt:"FNCPG, ONAMEL, ACS, SDT, AHP, IMG, ACMEG, RECOSAC-G, OCPH: nine organisations, one voice for Guinea's private health sector.",
+    news_a2_body:"<p>RENOSPAC federates nine national platforms, each representing a component of the private, associative or faith-based health sector:</p><ul class='mt-2 space-y-1.5 list-disc list-inside text-petrol-700'><li><strong>FNCPG</strong> — National Federation of Private Clinics of Guinea</li><li><strong>ONAMEL</strong> — National Order of Independent Medical Practice</li><li><strong>ACS</strong> — Concerted Actions for Health</li><li><strong>SDT</strong> — Health as a Right for All</li><li><strong>AHP</strong> — Alliance of Private Hospitals</li><li><strong>IMG</strong> — International Medical Guinea</li><li><strong>ACMEG</strong> — Medical Action Guinea</li><li><strong>RECOSAC-G</strong> — Faith-Based Network of Christian Health Organisations of Guinea</li><li><strong>OCPH</strong> — Catholic Organisation for Humanitarian Action</li></ul><p class='mt-3'>Together, they form a single coordination body representing private health facilities across the whole of the national territory.</p>",
+
+    news_a3_title:"Ethical standards in the private health sector: a RENOSPAC priority",
+    news_a3_excerpt:"A campaign led with the Ministry of Health and Public Hygiene to strengthen ethics, regulatory compliance and quality of care.",
+    news_a3_body:"<p>Alongside the Ministry of Health and Public Hygiene, RENOSPAC leads a campaign to raise ethical standards in the private health sub-sector, aimed at strengthening ethics, regulatory compliance and quality of care in private health facilities.</p><p>The private health sector accounts for a significant share of care provision alongside the public sector. It contributes to access to health services, particularly in urban areas where demand is high, and helps reduce the burden on public health facilities (FOSA).</p><p>That is why compliance with standards, transparency and the institutional credibility of member clinics, associations and faith-based facilities remain a constant priority for the network, in partnership with the DNEHPP.</p>",
+
+    news_a4_title:"How to join RENOSPAC: support for health facility promoters",
+    news_a4_excerpt:"Running a private, associative or faith-based health facility? RENOSPAC guides you through the process, including accreditation.",
+    news_a4_body:"<p>RENOSPAC guides and supports promoters of private, associative or faith-based health facilities, notably through the accreditation process, in coordination with the Direction Nationale des Établissements Hospitaliers Publics et Privés (DNEHPP).</p><p>Joining the network means becoming part of one of its nine national member platforms and benefiting from common coordination with the health authorities, as well as support with regulatory procedures.</p><p>To start the membership process, contact the network by phone, WhatsApp or through the site's contact form — the Executive Bureau team will direct you to the platform matching your facility.</p>",
+
+    news_a5_title:"The role of the private sector in Guinea's health system",
+    news_a5_excerpt:"Private, associative and faith-based clinics: an essential link in care provision alongside the public sector.",
+    news_a5_body:"<p>The private health sector accounts for a significant share of care provision alongside the public sector. It contributes to access to health services, particularly in urban areas where demand is high.</p><p>Private, associative and faith-based clinics play an essential role in diversifying services — specialist consultations, maternity care, laboratories, medical imaging — and help reduce the burden on public health facilities (FOSA) and improve national health coverage.</p><p>RENOSPAC is the coordination unit for these facilities, under the guidance of the health authorities through the DNEHPP.</p>",
 
     location_kicker:"Location", location_title:"Find us",
     location_footer_link:"View on the map",
@@ -315,7 +358,8 @@ const I18N = {
     f_title:"Send us a message", f_sub:"We will get back to you as soon as possible.",
     f_name:"Full name", f_name_ph:"Your name", f_tel:"Phone", f_email_ph:"you@example.com",
     f_subject:"Subject", f_msg_ph:"Your message…", f_send:"Send message",
-    f_note:"Thank you! Your message has been prepared. (Demo form — connect it to a sending service.)",
+    f_note:"Thank you! Your message has been sent. We'll get back to you as soon as possible.",
+    f_error:"Something went wrong. Please try again or email us directly at renospacgui@gmail.com.",
     f_options:["Joining the network","Accreditation request","Partnership","Other enquiry"],
     footer_bio:"National Network of Private, Associative and Faith-Based Health Organisations of Guinea. Nearly 1,400 health facilities united to serve the health of the Guinean population, in partnership with the Ministry of Health and Public Hygiene through the DNEHPP.",
     footer_map:"Site map", footer_partners:"Institutional partners",
@@ -394,6 +438,20 @@ const GALLERY_PHOTOS = [
   ['photo-12.jpg','capx_shirt'], ['photo-13.jpg','capx_talk'], ['photo-23.jpg','capx_work'],
   ['photo-24.jpg','capx_meeting'],
 ];
+
+/* Articles — Actualités page. tag: 'release' | 'event' | 'partnership' (drives the chip colour) */
+const NEWS_ARTICLES = [
+  { img:'assets/photo-1.jpg',  tag:'release',     key:'news_a1' },
+  { img:'assets/photo-16.jpg', tag:'partnership', key:'news_a2' },
+  { img:'assets/photo-5.jpg',  tag:'release',      key:'news_a3' },
+  { img:'assets/photo-9.jpg',  tag:'event',        key:'news_a4' },
+  { img:'assets/photo-2.jpg',  tag:'event',        key:'news_a5' },
+];
+const NEWS_TAG_STYLES = {
+  release:     'bg-vitale-500/10 text-vitale-500',
+  event:       'bg-ciel-500/10 text-ciel-500',
+  partnership: 'bg-lime-600/10 text-lime-600',
+};
 
 /* Team / Leadership — real, confirmed members go here. One batch edit
    adds/updates everyone at once; each entry needs a matching roleKey
@@ -530,6 +588,59 @@ function renderGallery() {
   bindFallbacks(g);
 }
 
+/* ── News articles renderer (actualites.html) ────────────────── */
+function renderNews() {
+  const grid = document.getElementById('news-grid');
+  if (!grid) return;
+  const t = I18N[LANG];
+  grid.innerHTML = NEWS_ARTICLES.map((a, i) => `
+    <article class="act-card reveal is-visible bg-white rounded-3xl overflow-hidden border border-petrol-900/10 shadow-sm cursor-pointer" data-article="${a.key}" style="transition-delay:${(i % 2) * .08}s">
+      <div class="overflow-hidden aspect-[16/9]">
+        <img src="${a.img}" alt="" class="act-img site-photo w-full h-full object-cover" loading="lazy">
+      </div>
+      <div class="p-6">
+        <span class="inline-block text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${NEWS_TAG_STYLES[a.tag]}" data-i18n="news_tag_${a.tag}">${t['news_tag_' + a.tag] || ''}</span>
+        <h3 class="mt-3 font-display font-bold text-lg leading-snug">${t[a.key + '_title'] || ''}</h3>
+        <p class="mt-2 text-sm text-petrol-700 leading-relaxed">${t[a.key + '_excerpt'] || ''}</p>
+        <span class="mt-3 inline-flex items-center gap-1.5 text-sm font-bold text-ciel-500">${t.news_read || ''} <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2.6" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12l-7.5 7.5M21 12H3"/></svg></span>
+      </div>
+    </article>`).join('');
+  grid.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  bindFallbacks(grid);
+  grid.querySelectorAll('[data-article]').forEach(card => card.addEventListener('click', () => openArticle(card.dataset.article)));
+}
+function openArticle(key) {
+  const modal = document.getElementById('article-modal');
+  if (!modal) return;
+  const t = I18N[LANG];
+  const art = NEWS_ARTICLES.find(a => a.key === key);
+  document.getElementById('article-modal-tag').textContent = t['news_tag_' + art.tag] || '';
+  document.getElementById('article-modal-tag').className = `inline-block text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full ${NEWS_TAG_STYLES[art.tag]}`;
+  document.getElementById('article-modal-title').textContent = t[key + '_title'] || '';
+  document.getElementById('article-modal-body').innerHTML = t[key + '_body'] || '';
+  document.getElementById('article-modal-img').src = art.img;
+  modal.classList.remove('hidden');
+  modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+function closeArticle() {
+  const modal = document.getElementById('article-modal');
+  if (!modal) return;
+  modal.classList.add('hidden');
+  modal.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+function bindArticleModal() {
+  const modal = document.getElementById('article-modal');
+  if (!modal) return;
+  modal.addEventListener('click', closeArticle);
+  const card = document.getElementById('article-modal-card');
+  if (card) card.addEventListener('click', e => e.stopPropagation());
+  const x = document.getElementById('article-modal-close');
+  if (x) x.addEventListener('click', closeArticle);
+  addEventListener('keydown', e => { if (e.key === 'Escape') closeArticle(); });
+}
+
 /* ── Language ────────────────────────────────────────────────── */
 function applyLang(lang) {
   LANG = I18N[lang] ? lang : 'fr';
@@ -544,6 +655,7 @@ function applyLang(lang) {
   document.querySelectorAll('.ph-tile [data-ph-caption]').forEach(el => { el.textContent = t[el.dataset.phCaption] || t.ph_note; });
   renderGrids();
   renderTeam();
+  renderNews();
   try { localStorage.setItem('renospac-lang', LANG); } catch(e) {}
 }
 document.querySelectorAll('.lang-btn').forEach(b => b.addEventListener('click', () => applyLang(b.dataset.lang)));
@@ -629,17 +741,36 @@ if (lb) {
   addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
 }
 
-/* ── Demo contact form ───────────────────────────────────────── */
+/* ── Contact form — submits to arjalloh79@gmail.com via FormSubmit ── */
 const form = document.getElementById('contact-form');
-if (form) form.addEventListener('submit', e => {
+if (form) form.addEventListener('submit', async e => {
   e.preventDefault();
-  document.getElementById('form-note').classList.remove('hidden');
-  e.target.reset();
+  const note = document.getElementById('form-note');
+  const err = document.getElementById('form-error');
+  const btn = form.querySelector('button[type="submit"]');
+  note.classList.add('hidden');
+  err.classList.add('hidden');
+  btn.disabled = true;
+  try {
+    const res = await fetch(`https://formsubmit.co/ajax/${form.action.split('/').pop()}`, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form),
+    });
+    if (!res.ok) throw new Error('send failed');
+    note.classList.remove('hidden');
+    form.reset();
+  } catch {
+    err.classList.remove('hidden');
+  } finally {
+    btn.disabled = false;
+  }
 });
 
 /* ── Boot ────────────────────────────────────────────────────── */
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 renderGallery();
+bindArticleModal();
 bindFallbacks(document);
 bindGallery(document);
 initSlider();

@@ -204,33 +204,38 @@
     </div>
   </div>
   <div class="reveal" style="transition-delay:.1s">
-    <form id="contact-form" class="bg-white text-petrol-900 rounded-3xl p-8 sm:p-10 shadow-xl shadow-petrol-900/10 border border-petrol-900/10">
+    <form id="contact-form" action="https://formsubmit.co/arjalloh79@gmail.com" method="POST" class="bg-white text-petrol-900 rounded-3xl p-8 sm:p-10 shadow-xl shadow-petrol-900/10 border border-petrol-900/10">
+      <input type="hidden" name="_subject" value="Nouveau message — Site RENOSPAC">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
       <h3 class="font-display font-bold text-2xl" data-i18n="f_title">Envoyez-nous un message</h3>
       <p class="text-sm text-petrol-700/70 mt-1.5" data-i18n="f_sub"></p>
       <div class="mt-7 grid sm:grid-cols-2 gap-4">
         <label class="block">
           <span class="text-sm font-semibold" data-i18n="f_name">Nom complet</span>
-          <input type="text" required data-i18n-ph="f_name_ph" placeholder="Votre nom" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500">
+          <input type="text" name="name" required data-i18n-ph="f_name_ph" placeholder="Votre nom" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500">
         </label>
         <label class="block">
           <span class="text-sm font-semibold" data-i18n="f_tel">Téléphone</span>
-          <input type="tel" placeholder="+224 ..." class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500">
+          <input type="tel" name="phone" placeholder="+224 ..." class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500">
         </label>
       </div>
       <label class="block mt-4">
         <span class="text-sm font-semibold">Email</span>
-        <input type="email" required data-i18n-ph="f_email_ph" placeholder="vous@exemple.com" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500">
+        <input type="email" name="email" required data-i18n-ph="f_email_ph" placeholder="vous@exemple.com" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500">
       </label>
       <label class="block mt-4">
         <span class="text-sm font-semibold" data-i18n="f_subject">Objet</span>
-        <select id="f-select" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500"></select>
+        <select id="f-select" name="subject" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500"></select>
       </label>
       <label class="block mt-4">
         <span class="text-sm font-semibold">Message</span>
-        <textarea rows="4" required data-i18n-ph="f_msg_ph" placeholder="Votre message…" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500"></textarea>
+        <textarea rows="4" name="message" required data-i18n-ph="f_msg_ph" placeholder="Votre message…" class="mt-1.5 w-full rounded-xl border border-petrol-900/15 bg-creme px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-ciel-500 focus:border-ciel-500"></textarea>
       </label>
       <button type="submit" class="mt-6 w-full bg-vitale-500 hover:bg-vitale-600 text-white font-bold py-3.5 rounded-xl transition-all hover:shadow-lg hover:shadow-vitale-500/25" data-i18n="f_send">Envoyer le message</button>
       <p id="form-note" class="hidden mt-4 text-sm text-center font-medium text-lime-600" data-i18n="f_note"></p>
+      <p id="form-error" class="hidden mt-4 text-sm text-center font-medium text-red-600" data-i18n="f_error"></p>
     </form>
   </div>
 </section>
