@@ -32,14 +32,14 @@ const I18N = {
 
     /* Mot du Président — teaser card (index) + full page (gouvernance) */
     president_kicker:"Mot du Président",
-    president_name:"[Nom du Président] — À compléter",
+    president_name:"Emmanuel Goumou",
     president_role:"Président du RENOSPAC",
     president_teaser:"« Le RENOSPAC s'engage chaque jour aux côtés de ses 1 400 structures membres pour un secteur sanitaire privé plus fort, plus éthique et plus utile à la population guinéenne. »",
     president_read_full:"Lire le message complet",
     president_full_title:"Mot du Président",
     president_full_p1:"[Ce texte est un espace réservé. Remplacez-le par le message officiel du Président du RENOSPAC — sa vision pour le réseau, son appel aux structures membres et aux partenaires, et ses priorités pour le secteur sanitaire privé guinéen.]",
     president_full_p2:"[Deuxième paragraphe du message — par exemple un rappel des acquis du réseau, ou un remerciement aux plateformes membres et au Ministère de la Santé et de l'Hygiène Publique pour leur collaboration.]",
-    president_full_sign:"[Nom du Président]",
+    president_full_sign:"Emmanuel Goumou",
     president_full_role:"Président du RENOSPAC",
 
     /* Direction & Gouvernance page */
@@ -210,14 +210,14 @@ const I18N = {
 
     /* President's Message — teaser card (index) + full page (governance) */
     president_kicker:"President's Message",
-    president_name:"[President's Name] — To be completed",
+    president_name:"Emmanuel Goumou",
     president_role:"President of RENOSPAC",
     president_teaser:"“RENOSPAC works every day alongside its 1,400 member facilities for a stronger, more ethical private health sector that better serves the Guinean population.”",
     president_read_full:"Read the full message",
     president_full_title:"President's Message",
     president_full_p1:"[This text is a placeholder. Replace it with the official message from the President of RENOSPAC — their vision for the network, their call to member facilities and partners, and their priorities for the Guinean private health sector.]",
     president_full_p2:"[Second paragraph of the message — for example, a recap of the network's achievements, or thanks to member platforms and the Ministry of Health and Public Hygiene for their collaboration.]",
-    president_full_sign:"[President's Name]",
+    president_full_sign:"Emmanuel Goumou",
     president_full_role:"President of RENOSPAC",
 
     /* Direction & Governance page */
