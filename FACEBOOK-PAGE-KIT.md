@@ -25,18 +25,18 @@ Tout est prêt à copier-coller. La création prend ~5 minutes.
 ## Images
 
 - **Photo de profil** : le logo (`assets/logo.png`, ou la version carrée HD). Format idéal : carré ≥ 320×320 px — le logo rond s'y prête parfaitement.
-- **Photo de couverture** : la photo de groupe devant la banderole (photo-5) ou le grand groupe dehors (photo-8). Format idéal : 851×315 px — cadrez large, les visages au centre.
+- **Photo de couverture** : la photo de groupe devant la banderole (`photo-5.jpg`) ou le grand groupe dehors (`photo-8.jpg`). Format idéal : 851×315 px — cadrez large, les visages au centre.
 
 ## Coordonnées à renseigner
 
 - Téléphone bureau : +224 620 59 10 68
 - Mobile / WhatsApp : +224 624 73 70 88
 - Email : renospacgui@gmail.com
-- Site web : https://arjalloh79-coder.github.io/RENOSPAC/
+- Site web : https://renospacguinee.com/ *(en cours de configuration — utilisez https://arjalloh79-coder.github.io/RENOSPAC/ tant que le domaine personnalisé n'est pas actif)*
 - Adresse : Bureau de la Direction de la Santé de la Ville de Conakry, Lambagny, Commune de Ratoma, Conakry – Guinée · 030 B.P. 21
 - Horaires : Lun–Ven, 8h30–17h00
 
-## 3 premières publications (prêtes à poster)
+## 5 premières publications (prêtes à poster)
 
 **Post 1 — Présentation**
 > 🏥 Bienvenue sur la page officielle du RENOSPAC !
@@ -54,8 +54,19 @@ Tout est prêt à copier-coller. La création prend ~5 minutes.
 > Le RENOSPAC vous oriente et vous accompagne, notamment dans le processus de recherche d'agréments, en lien avec la DNEHPP.
 > 📩 Écrivez-nous en message privé ou contactez-nous. #Agrément #FOSA
 
+**Post 4 — Le Bureau exécutif** *(avec une photo du Président, `assets/team-president.jpg`)*
+> 👥 Découvrez l'équipe qui pilote le réseau ! Le Bureau exécutif du RENOSPAC, présidé par M. Emmanuel Goumou, est désormais en ligne sur notre page Gouvernance.
+> 🔗 renospacguinee.com/gouvernance.html
+> #Gouvernance #RENOSPAC
+
+**Post 5 — Notre site web est en ligne**
+> 🌐 Le site officiel du RENOSPAC est en ligne ! Retrouvez notre mission, nos 9 plateformes membres, notre Bureau exécutif, notre galerie photo et nos actualités.
+> 🔗 renospacguinee.com
+> #RENOSPAC #SantéPrivée #Guinée
+
 ## Conseils
 
-- Publiez 1 à 2 fois par semaine (activités, ateliers, communiqués, photos de terrain).
+- Publiez 1 à 2 fois par semaine (activités, ateliers, communiqués, photos de terrain — la Galerie et les Actualités du site sont de bonnes sources de contenu prêtes à réutiliser).
 - Répondez aux messages via la messagerie de la Page (activez les réponses automatiques).
-- Ajoutez le lien du site web dans la section « À propos » dès qu'il est en ligne, et le lien Facebook dans le pied de page du site (remplacer les `href="#"` des icônes Facebook dans `index.html`).
+- Une fois la Page créée, envoyez-moi son lien (facebook.com/...) pour que je remplace le `href="#"` des icônes Facebook dans le pied de page du site par le vrai lien.
+- Une fois le domaine `renospacguinee.com` actif, mettez à jour le lien "Site web" de la Page avec la version finale.
