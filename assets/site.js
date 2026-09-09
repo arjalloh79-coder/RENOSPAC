@@ -401,7 +401,7 @@ const TEAM_MEMBERS = [
   { img: 'assets/team-secretaire-charge-projets.jpg', name: 'Abdoul Karim Barry', roleKey: 'team_role_secretaire_projets' },
   { img: 'assets/team-secretaire-communication-information.jpg', name: 'Miftaou Deen Bah', roleKey: 'team_role_secretaire_communication' },
   { img: 'assets/team-coordinateur-national.jpg', name: 'Abdoulaye Mamadouba Bangoura', roleKey: 'team_role_coordinateur_national' },
-  { img: 'assets/team-services-administratif et-financieres.jpg', name: 'Nanten Condé', roleKey: 'team_role_services_financiers' },
+  { img: 'assets/team-services-administratif et-financier.jpg', name: 'Nanten Condé', roleKey: 'team_role_services_financiers' },
   { img: 'assets/team-secretaire-general-adjoint.jpg', name: 'Elhadj Zainou Bah', roleKey: 'team_role_sg_adjoint' },
   { img: 'assets/team-commissaire-comptes.jpg', name: 'Mohamed Diakité', roleKey: 'team_role_commissaire_comptes' },
   { img: 'assets/team-coordinateur-adjoint.jpg', name: 'Gono Sonomou', roleKey: 'team_role_coordinateur_adjoint' },
