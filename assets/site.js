@@ -46,16 +46,19 @@ const I18N = {
     gov_kicker:"Direction & Gouvernance",
     gov_title:"L'équipe qui pilote le réseau",
     gov_sub:"Les responsables du RENOSPAC — informations à compléter par le réseau.",
-    gov_team_note:"Les fiches ci-dessous sont des emplacements réservés. Remplacez chaque nom, fonction et photo par les informations réelles des membres du bureau exécutif.",
+    gov_team_note:"Photos et fonctions confirmées par le réseau ; les noms seront ajoutés dès leur réception.",
     gov_placeholder_name:"[Nom à renseigner]",
-    role_president:"Président",
-    role_vp:"Vice-Président",
-    role_sg:"Secrétaire Général",
-    role_tresorier:"Trésorier",
-    role_conseiller:"Conseiller Juridique",
-    role_coord_medical:"Coordinateur Médical",
     team1_role:"Chargé des Affaires Extérieures",
     team1_bio:"Responsable des partenariats extérieurs et de la communication.",
+    team_role_president:"Président",
+    team_role_sg_adjoint:"Secrétaire Général Adjoint",
+    team_role_coordinateur_national:"Coordinateur National",
+    team_role_coordinateur_adjoint:"Coordinateur Adjoint",
+    team_role_secretaire_projets:"Secrétaire chargé des Projets",
+    team_role_charge_projets_adjoint:"Chargé de Projets Adjoint",
+    team_role_secretaire_communication:"Secrétaire chargé à la Communication et à l'Information",
+    team_role_commissaire_comptes:"Commissaire aux Comptes",
+    team_role_services_financiers:"Services des Affaires Financières",
 
     /* À propos — new sub-sections */
     history_kicker:"Notre histoire",
@@ -220,16 +223,19 @@ const I18N = {
     gov_kicker:"Direction & Governance",
     gov_title:"The team leading the network",
     gov_sub:"RENOSPAC's leadership — information to be completed by the network.",
-    gov_team_note:"The cards below are placeholders. Replace each name, role and photo with the real information of the executive board members.",
+    gov_team_note:"Photos and roles confirmed by the network; names will be added once received.",
     gov_placeholder_name:"[Name to be added]",
-    role_president:"President",
-    role_vp:"Vice-President",
-    role_sg:"Secretary General",
-    role_tresorier:"Treasurer",
-    role_conseiller:"Legal Advisor",
-    role_coord_medical:"Medical Coordinator",
     team1_role:"External Affairs Officer",
     team1_bio:"Managing external partnerships and communications.",
+    team_role_president:"President",
+    team_role_sg_adjoint:"Deputy Secretary General",
+    team_role_coordinateur_national:"National Coordinator",
+    team_role_coordinateur_adjoint:"Deputy Coordinator",
+    team_role_secretaire_projets:"Secretary for Projects",
+    team_role_charge_projets_adjoint:"Deputy Projects Officer",
+    team_role_secretaire_communication:"Secretary for Communication and Information",
+    team_role_commissaire_comptes:"Auditor",
+    team_role_services_financiers:"Financial Affairs Officer",
 
     /* About — new sub-sections */
     history_kicker:"Our history",
@@ -391,7 +397,16 @@ const GALLERY_PHOTOS = [
    (and optional bioKey) added to both FR and EN blocks in I18N above.
    Names are not translated; titles and bios are, via the i18n keys. */
 const TEAM_MEMBERS = [
+  { img: 'assets/team-president.jpg', nameKey: 'gov_placeholder_name', roleKey: 'team_role_president' },
+  { img: 'assets/team-secretaire-general-adjoint.jpg', nameKey: 'gov_placeholder_name', roleKey: 'team_role_sg_adjoint' },
   { img: 'assets/charge-affaires-exterieures.jpg', name: 'Mamadou Diallo', roleKey: 'team1_role', bioKey: 'team1_bio' },
+  { img: 'assets/team-coordinateur-national.jpg', nameKey: 'gov_placeholder_name', roleKey: 'team_role_coordinateur_national' },
+  { img: 'assets/team-coordinateur-adjoint.jpg', nameKey: 'gov_placeholder_name', roleKey: 'team_role_coordinateur_adjoint' },
+  { img: 'assets/team-secretaire-charge-projets.jpg', nameKey: 'gov_placeholder_name', roleKey: 'team_role_secretaire_projets' },
+  { img: 'assets/team-charge-projets-adjoint.jpg', nameKey: 'gov_placeholder_name', roleKey: 'team_role_charge_projets_adjoint' },
+  { img: 'assets/team-secretaire-communication-information.jpg', nameKey: 'gov_placeholder_name', roleKey: 'team_role_secretaire_communication' },
+  { img: 'assets/team-commissaire-comptes.jpg', nameKey: 'gov_placeholder_name', roleKey: 'team_role_commissaire_comptes' },
+  { img: 'assets/team-services-affaires-financieres.jpg', nameKey: 'gov_placeholder_name', roleKey: 'team_role_services_financiers' },
 ];
 
 let LANG = 'fr';
@@ -479,15 +494,21 @@ function renderTeam() {
      re-inserting, so switching language doesn't duplicate them. The
      generic role-placeholder cards already in the HTML are left alone. */
   tg.querySelectorAll('.team-real-card').forEach(el => el.remove());
-  const cards = TEAM_MEMBERS.map((m, i) => `
+  const cards = TEAM_MEMBERS.map((m, i) => {
+    const nameHtml = m.name
+      ? `<p class="mt-4 font-display font-bold text-petrol-900">${m.name}</p>`
+      : `<p class="mt-4 font-display font-bold text-petrol-900/50 italic" data-i18n="${m.nameKey}">${t[m.nameKey] || ''}</p>`;
+    const altText = m.name || (t[m.roleKey] || '');
+    return `
     <div class="team-real-card reveal is-visible bg-white rounded-2xl border border-petrol-900/10 p-6 text-center shadow-sm" style="transition-delay:${(i % 3) * .08}s">
       <div class="w-20 h-20 mx-auto rounded-full bg-ciel-50 border border-ciel-500/20 overflow-hidden flex items-center justify-center">
-        <img src="${m.img}" alt="${m.name}" class="w-full h-full object-cover" loading="lazy" onerror="teamImgError(this)">
+        <img src="${m.img}" alt="${altText}" class="w-full h-full object-cover" loading="lazy" onerror="teamImgError(this)">
       </div>
-      <p class="mt-4 font-display font-bold text-petrol-900">${m.name}</p>
+      ${nameHtml}
       <p class="text-sm text-ciel-500 font-semibold" data-i18n="${m.roleKey}">${t[m.roleKey] || ''}</p>
       ${m.bioKey ? `<p class="mt-2 text-xs text-petrol-700/70 leading-relaxed" data-i18n="${m.bioKey}">${t[m.bioKey] || ''}</p>` : ''}
-    </div>`).join('');
+    </div>`;
+  }).join('');
   tg.insertAdjacentHTML('afterbegin', cards);
   tg.querySelectorAll('.reveal').forEach(el => io.observe(el));
 }
