@@ -160,6 +160,7 @@ const I18N = {
     capx_shirt:"Les membres aux couleurs du RENOSPAC",
     capx_talk:"Intervention lors d'un atelier de santé",
     capx_work:"Atelier de travail des membres du réseau",
+    capx_meeting:"Réunion de travail du Bureau exécutif du RENOSPAC",
     ph_note:"Photo du RENOSPAC", ph_add:"Ajoutez le fichier",
     platform_names:{
       FNCPG:"Fédération Nationale des Cliniques Privées de Guinée",
@@ -337,6 +338,7 @@ const I18N = {
     capx_shirt:"Members wearing the RENOSPAC colours",
     capx_talk:"Speaking at a health workshop",
     capx_work:"Working session of network members",
+    capx_meeting:"RENOSPAC Executive Bureau working meeting",
     ph_note:"RENOSPAC photo", ph_add:"Add the file",
     platform_names:{
       FNCPG:"National Federation of Private Clinics of Guinea",
@@ -390,6 +392,7 @@ const GALLERY_PHOTOS = [
   ['photo-21.jpg','capx_msp'], ['photo-22.jpg','capx_msp'],
   ['photo-9.jpg','capx_visit'], ['photo-10.jpg','capx_event'],
   ['photo-12.jpg','capx_shirt'], ['photo-13.jpg','capx_talk'], ['photo-23.jpg','capx_work'],
+  ['photo-24.jpg','capx_meeting'],
 ];
 
 /* Team / Leadership — real, confirmed members go here. One batch edit
