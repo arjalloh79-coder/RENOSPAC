@@ -32,14 +32,31 @@ const I18N = {
 
     /* Mot du Président — teaser card (index) + full page (gouvernance) */
     president_kicker:"Mot du Président",
-    president_name:"Emmanuel Goumou",
+    president_name:"Dr Emmanuel Goumou",
     president_role:"Président du RENOSPAC",
     president_teaser:"« Le RENOSPAC s'engage chaque jour aux côtés de ses 1 400 structures membres pour un secteur sanitaire privé plus fort, plus éthique et plus utile à la population guinéenne. »",
     president_read_full:"Lire le message complet",
     president_full_title:"Mot du Président",
-    president_full_p1:"[Ce texte est un espace réservé. Remplacez-le par le message officiel du Président du RENOSPAC — sa vision pour le réseau, son appel aux structures membres et aux partenaires, et ses priorités pour le secteur sanitaire privé guinéen.]",
-    president_full_p2:"[Deuxième paragraphe du message — par exemple un rappel des acquis du réseau, ou un remerciement aux plateformes membres et au Ministère de la Santé et de l'Hygiène Publique pour leur collaboration.]",
-    president_full_sign:"Emmanuel Goumou",
+    president_full_body:`<p class="text-petrol-700 leading-relaxed">Chers partenaires, chers membres,</p>
+<p class="mt-5 text-petrol-700 leading-relaxed">Le Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée (RENOSPAC) est né de la volonté conjointe du Ministère de la Santé et de l'Hygiène Publique et des plateformes des établissements de santé privés, afin de renforcer la place et la contribution de ces structures dans le système de santé national.</p>
+<p class="mt-5 text-petrol-700 leading-relaxed">Depuis sa création, notre mission est claire : promouvoir un secteur sanitaire privé responsable, transparent et complémentaire aux efforts de l'État.</p>
+<p class="mt-5 font-semibold text-petrol-900">Aujourd'hui, nous faisons face à des défis majeurs :</p>
+<ul class="mt-2 space-y-1.5 list-disc list-inside text-petrol-700">
+<li>Accès équitable aux agréments et reconnaissance légale des établissements privés.</li>
+<li>Amélioration de la qualité des soins pour répondre aux besoins croissants des populations.</li>
+<li>Dialogue constructif avec les autorités afin de bâtir un cadre de régulation juste et inclusif.</li>
+<li>Renforcement des capacités des promoteurs et du personnel de santé.</li>
+</ul>
+<p class="mt-5 font-semibold text-petrol-900">Le RENOSPAC s'engage à :</p>
+<ul class="mt-2 space-y-1.5 list-disc list-inside text-petrol-700">
+<li>Défendre les intérêts de ses membres dans un esprit de concertation et partenariat.</li>
+<li>Contribuer à l'assainissement du secteur de la santé par la transparence et la conformité.</li>
+<li>Promouvoir l'intégration des structures privées dans les programmes nationaux de santé publique.</li>
+</ul>
+<p class="mt-5 text-petrol-700 leading-relaxed">Nous croyons fermement que la santé est un droit fondamental et que chaque acteur, public ou privé, doit être mobilisé pour garantir ce droit à nos populations.</p>
+<p class="mt-5 text-petrol-700 leading-relaxed">Au nom du Bureau National, des coordinations régionales et des plateformes, je réaffirme notre disponibilité à travailler main dans la main avec le Ministère de la Santé et de l'Hygiène Publique, les partenaires techniques et financiers, ainsi que les communautés locales, pour bâtir un système de santé plus juste, plus efficace et plus humain.</p>
+<p class="mt-5 text-petrol-700 leading-relaxed italic">Avec foi et détermination,</p>`,
+    president_full_sign:"Dr Emmanuel Goumou",
     president_full_role:"Président du RENOSPAC",
 
     /* Direction & Gouvernance page */
@@ -232,14 +249,31 @@ const I18N = {
 
     /* President's Message — teaser card (index) + full page (governance) */
     president_kicker:"President's Message",
-    president_name:"Emmanuel Goumou",
+    president_name:"Dr Emmanuel Goumou",
     president_role:"President of RENOSPAC",
     president_teaser:"“RENOSPAC works every day alongside its 1,400 member facilities for a stronger, more ethical private health sector that better serves the Guinean population.”",
     president_read_full:"Read the full message",
     president_full_title:"President's Message",
-    president_full_p1:"[This text is a placeholder. Replace it with the official message from the President of RENOSPAC — their vision for the network, their call to member facilities and partners, and their priorities for the Guinean private health sector.]",
-    president_full_p2:"[Second paragraph of the message — for example, a recap of the network's achievements, or thanks to member platforms and the Ministry of Health and Public Hygiene for their collaboration.]",
-    president_full_sign:"Emmanuel Goumou",
+    president_full_body:`<p class="text-petrol-700 leading-relaxed">Dear partners, dear members,</p>
+<p class="mt-5 text-petrol-700 leading-relaxed">The Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée (RENOSPAC) was born from the joint will of the Ministry of Health and Public Hygiene and the platforms of private health facilities, in order to strengthen the place and contribution of these facilities within the national health system.</p>
+<p class="mt-5 text-petrol-700 leading-relaxed">Since its creation, our mission has been clear: to promote a private health sector that is responsible, transparent and complementary to the efforts of the State.</p>
+<p class="mt-5 font-semibold text-petrol-900">Today, we face major challenges:</p>
+<ul class="mt-2 space-y-1.5 list-disc list-inside text-petrol-700">
+<li>Equitable access to accreditation and legal recognition for private facilities.</li>
+<li>Improving the quality of care to meet the growing needs of the population.</li>
+<li>Constructive dialogue with the authorities to build a fair and inclusive regulatory framework.</li>
+<li>Strengthening the capacities of facility promoters and health personnel.</li>
+</ul>
+<p class="mt-5 font-semibold text-petrol-900">RENOSPAC is committed to:</p>
+<ul class="mt-2 space-y-1.5 list-disc list-inside text-petrol-700">
+<li>Defending the interests of its members in a spirit of consultation and partnership.</li>
+<li>Contributing to cleaning up the health sector through transparency and compliance.</li>
+<li>Promoting the integration of private facilities into national public health programmes.</li>
+</ul>
+<p class="mt-5 text-petrol-700 leading-relaxed">We firmly believe that health is a fundamental right, and that every actor, public or private, must be mobilised to guarantee this right for our people.</p>
+<p class="mt-5 text-petrol-700 leading-relaxed">On behalf of the National Bureau, the regional coordinations and the platforms, I reaffirm our readiness to work hand in hand with the Ministry of Health and Public Hygiene, technical and financial partners, and local communities, to build a fairer, more effective and more humane health system.</p>
+<p class="mt-5 text-petrol-700 leading-relaxed italic">With faith and determination,</p>`,
+    president_full_sign:"Dr Emmanuel Goumou",
     president_full_role:"President of RENOSPAC",
 
     /* Direction & Governance page */
@@ -458,7 +492,7 @@ const NEWS_TAG_STYLES = {
    (and optional bioKey) added to both FR and EN blocks in I18N above.
    Names are not translated; titles and bios are, via the i18n keys. */
 const TEAM_MEMBERS = [
-  { img: 'assets/team-president.jpg', name: 'Emmanuel Goumou', roleKey: 'team_role_president' },
+  { img: 'assets/team-president.jpg', name: 'Dr Emmanuel Goumou', roleKey: 'team_role_president' },
   { img: 'assets/team-secretaire-charge-projets.jpg', name: 'Abdoul Karim Barry', roleKey: 'team_role_secretaire_projets' },
   { img: 'assets/team-secretaire-communication-information.jpg', name: 'Miftaou Deen Bah', roleKey: 'team_role_secretaire_communication' },
   { img: 'assets/team-coordinateur-national.jpg', name: 'Abdoulaye Mamadouba Bangoura', roleKey: 'team_role_coordinateur_national' },
