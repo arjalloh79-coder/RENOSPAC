@@ -1,0 +1,5 @@
+# Block internal docs and repo files from public access
+<FilesMatch "\.(md|yml)$">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 /\.(git|github)(/|$)
