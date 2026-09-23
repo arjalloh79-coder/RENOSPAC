@@ -12,11 +12,11 @@ Tout est prêt à copier-coller. La création prend ~5 minutes.
 
 ## Bio (155 caractères max)
 
-> Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée — ≈1 400 structures, 9 plateformes, aux côtés du MSHP.
+> Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée — un vaste réseau de structures, 9 plateformes, aux côtés du MSHP.
 
 ## Description longue (section « À propos »)
 
-> Le RENOSPAC (Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée) regroupe et représente près de 1 400 structures sanitaires privées à travers 9 plateformes nationales : FNCPG, ONAMEL, ACS, SDT, AHP, IMG, ACMEG, RECOSAC-G et OCPH.
+> Le RENOSPAC (Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée) regroupe et représente un vaste réseau de structures sanitaires privées à travers 9 plateformes nationales : FNCPG, ONAMEL, ACS, SDT, AHP, IMG, ACMEG, RECOSAC-G et OCPH.
 >
 > Notre mission : défendre les intérêts des cliniques privées, promouvoir leur conformité réglementaire et renforcer leur crédibilité institutionnelle.
 >
@@ -40,7 +40,7 @@ Tout est prêt à copier-coller. La création prend ~5 minutes.
 
 **Post 1 — Présentation**
 > 🏥 Bienvenue sur la page officielle du RENOSPAC !
-> Le Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée regroupe près de 1 400 structures sanitaires à travers 9 plateformes nationales.
+> Le Réseau National des Organisations Sanitaires Privées, Associatives et Confessionnelles de Guinée regroupe un important réseau de structures sanitaires à travers 9 plateformes nationales.
 > Ensemble, aux côtés du Ministère de la Santé et de l'Hygiène Publique, nous œuvrons pour un secteur sanitaire privé de qualité, accessible et conforme, au service de toute la Guinée. 🇬🇳
 > #RENOSPAC #Guinée #Santé
 
